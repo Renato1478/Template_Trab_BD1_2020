@@ -86,68 +86,115 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         (criação de tabelas, alterações, etc..) 
 
         CREATE TABLE USUARIO (
-            id serial,
-            cidade varchar(100),
-            estado varchar(80),
-            nome varchar(100),
-            telefone int,
-            email varchar(100),
-            senha varchar(100),
-            cpf int,
-            bairro varchar(100),
-            numero int,
-            desc_logradouro varchar(100),
-            logradouro varchar(100),
-            primary key(id)
-        );
+        id serial,
+        id_cidade int,
+        nome varchar(100),
+        telefone int,
+        email varchar(100),
+        senha varchar(25),
+        cpf int,
+        bairro varchar(50),
+        numero int,
+        logradouro varchar(100),
+        desc_logradouro varchar(100),
+        primary key(id)
+       );
+       alter table usuario add constraint fk_id_cidade foreign key(id_cidade) references cidade(id);
 
-        CREATE TABLE CASA_ADOCAO(
-            id serial,
-            estado varchar(100),
-            email varchar(100),
-            senha varchar(100),
-            nome varchar(100),
-            cidade varchar(80),
-            bairro varchar(100),
-            numero int,
-            desc_logradouro varchar(100),
-            logradouro varchar(100),
-            primary key(id)
-        );
+       CREATE TABLE ESTADO
+       (
+        id serial,
+        nome char(2),
+        primary key(id)
+       );
 
-        CREATE TABLE ANIMAL(
-            id serial,
-            tipo varchar(50),
-            raca varchar(50),
-            data_nascimento date,
-            nome varchar(100),
-            id_casa_adocao int,
-            CONSTRAINT fk_id_casa_adocao
-            FOREIGN KEY(id_casa_adocao) 
-            REFERENCES CASA_ADOCAO(id),
-            primary key(id)
-        );
+       CREATE TABLE CIDADE
+       (
+        id serial,
+        id_estado int,
+        nome varchar(50),
+        primary key(id),
+        foreign key(id_estado) references estado(id)
+       );
 
-        CREATE TABLE PEDIDO_ADOCAO(
-            id serial,
-            mensagem varchar(100),
-            status varchar(50),
-            data_solicitacao date,
-            data_conclusao date,
-            id_usuario int,
-            id_casa_adocao int,
-            id_animal int,
-            PRIMARY KEY (id),
-            CONSTRAINT fk_pedido_usuario
-            FOREIGN KEY(id_usuario) 
-            REFERENCES USUARIO(id),
-            CONSTRAINT fk_pedido_casa_adocao
-            FOREIGN KEY(id_casa_adocao)
-            REFERENCES CASA_ADOCAO(id),
-            CONSTRAINT fk_pedido_animal
-            FOREIGN KEY(id_animal)
-            REFERENCES ANIMAL(id)
-        );
+       CREATE TABLE CASA_ADOCAO(
+        id serial,
+        id_cidade int,
+        email varchar(100),
+        senha varchar(25),
+        nome varchar(50),
+        bairro varchar(100),
+        numero int,
+        logradouro varchar(100),
+        desc_logradouro varchar(100),
+        primary key(id),
+        foreign key(id_cidade) references cidade(id)
+       );
+
+       CREATE TABLE ANIMAL(
+        id serial,
+        data_nascimento date,
+        id_casa_adocao int,
+        id_raca int,
+        id_tipo int,
+        CONSTRAINT fk_id_casa_adocao
+        FOREIGN KEY(id_casa_adocao) 
+        REFERENCES CASA_ADOCAO(id),
+        CONSTRAINT fk_id_raca
+        FOREIGN KEY(id_raca) 
+        REFERENCES RACA(id),
+        CONSTRAINT fk_id_tipo
+        FOREIGN KEY(id_tipo) 
+        REFERENCES TIPO(id),
+        primary key(id)
+       );
+
+       CREATE TABLE RACA
+       (
+        id int,
+        nome varchar(50),
+        primary key(id)
+       );
+
+       CREATE TABLE TIPO
+       (
+        id int,
+        descricao varchar(25),
+        primary key(id)
+       );
+
+       CREATE TABLE PEDIDO_ADOCAO(
+        id serial,
+        mensagem varchar(255),
+        data_solicitacao date,
+        data_conclusao date,
+        id_status int,
+        id_usuario int,
+        id_casa_adocao int,
+        id_animal int,
+        PRIMARY KEY (id),
+        CONSTRAINT fk_pedido_usuario
+        FOREIGN KEY(id_usuario) 
+        REFERENCES USUARIO(id),
+        CONSTRAINT fk_pedido_casa_adocao
+        FOREIGN KEY(id_casa_adocao)
+        REFERENCES CASA_ADOCAO(id),
+        CONSTRAINT fk_pedido_animal
+        FOREIGN KEY(id_animal)
+        REFERENCES ANIMAL(id),
+        CONSTRAINT fk_status
+        FOREIGN KEY(id_status)
+        REFERENCES STATUS(id)
+       );
+
+       CREATE TABLE STATUS
+       (
+        id int,
+        descricao varchar(25),
+        primary key(id)
+       );
+
+
 
         
        
