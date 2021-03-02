@@ -92,6 +92,20 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
+        
+        Inserts da tabela Usuário:
+        INSERT INTO USUARIO (cidade, estado, nome, telefone, email, senha, cpf, bairro, numero, desc_logradouro, logradouro) VALUES
+('Serra', 'ES', 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 'Jardim Carapina', 197, 'Conceição do Castelo', 'Rua'),
+('Vilha Velha', 'ES', 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 'São Torquato', 191, 'Américo Buaiz', 'Avenida'),
+('Vitória', 'ES', 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 'Maria Ortiz', 293, '24 de maio', 'Rua'),
+('Domingos Martins', 'ES', 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 'Arace', 912, 'Afrânio Peixoto', 'Avenida'),
+('São Mateus', 'ES', 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 'Vintem', 561, ' das Espatodias', 'Alameda'),
+('Muniz Freire', 'ES', 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 'Menino Jesus', 831, 'Fernando Ferrari', 'Avenida'),
+('São Paulo','SP', 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 'Água Rasa', 341, '9 de Julho', 'Avenida'),
+('Belo Horizonte', 'MG', 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 'Buritis', 455, 'Olegario Maciel', 'Avenida'),
+('Rio de Janeiro', 'RJ', 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 'Botafogo', 555, 'Alvaro Chaves', 'Rua'),
+('Porto Alegre', 'RS', 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 'Aberta dos Morros', 980, 'Lopo Gonçalves', 'Rua');
+
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
