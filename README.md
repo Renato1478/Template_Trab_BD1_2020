@@ -84,6 +84,71 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
+
+        CREATE TABLE USUARIO (
+            id serial,
+            cidade varchar(100),
+            estado varchar(80),
+            nome varchar(100),
+            telefone int,
+            email varchar(100),
+            senha varchar(100),
+            cpf int,
+            bairro varchar(100),
+            numero int,
+            desc_logradouro varchar(100),
+            logradouro varchar(100),
+            primary key(id)
+        );
+
+        CREATE TABLE CASA_ADOCAO(
+            id serial,
+            estado varchar(100),
+            email varchar(100),
+            senha varchar(100),
+            nome varchar(100),
+            cidade varchar(80),
+            bairro varchar(100),
+            numero int,
+            desc_logradouro varchar(100),
+            logradouro varchar(100),
+            primary key(id)
+        );
+
+        CREATE TABLE ANIMAL(
+            id serial,
+            tipo varchar(50),
+            raca varchar(50),
+            data_nascimento date,
+            nome varchar(100),
+            id_casa_adocao int,
+            CONSTRAINT fk_id_casa_adocao
+            FOREIGN KEY(id_casa_adocao) 
+            REFERENCES CASA_ADOCAO(id),
+            primary key(id)
+        );
+
+        CREATE TABLE PEDIDO_ADOCAO(
+            id serial,
+            mensagem varchar(100),
+            status varchar(50),
+            data_solicitacao date,
+            data_conclusao date,
+            id_usuario int,
+            id_casa_adocao int,
+            id_animal int,
+            PRIMARY KEY (id),
+            CONSTRAINT fk_pedido_usuario
+            FOREIGN KEY(id_usuario) 
+            REFERENCES USUARIO(id),
+            CONSTRAINT fk_pedido_casa_adocao
+            FOREIGN KEY(id_casa_adocao)
+            REFERENCES CASA_ADOCAO(id),
+            CONSTRAINT fk_pedido_animal
+            FOREIGN KEY(id_animal)
+            REFERENCES ANIMAL(id)
+        );
+
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
