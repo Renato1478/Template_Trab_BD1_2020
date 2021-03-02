@@ -5,9 +5,9 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Renato Peres de Souza:renatoperesdesouza@hotmail.com<br>
-Thiago Correa:thiagocsdossantos@gmail.com<br>
-Eduardo Alves:eduardomatanob@gmail.com<br>
+Renato Peres de Souza: renatoperesdesouza@hotmail.com<br>
+Thiago Correa: thiagocsdossantos@gmail.com<br>
+Eduardo Alves: eduardomatanob@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
 Este documento contém a especificação do projeto do banco de dados <AchaPatas> 
@@ -24,7 +24,6 @@ Este documento contém a especificação do projeto do banco de dados <AchaPatas
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 Neste ponto a codificação não e necessária, somente as ideias de telas devem ser criadas, o princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas ou descartadas <br>
 
-Sugestão: https://balsamiq.com/products/mockups/<br>
 
 ![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
