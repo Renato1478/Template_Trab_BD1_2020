@@ -100,9 +100,22 @@ Pedidos feito por um usuário
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
+		id: Campo que identifica o usuário na tabela.
+		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira).
+		nome: Campo que contém o nome do usuário.
+		telefone: Campo que armazena um telefone de contato do usuário.
+		email: Campo que armazena um email para o login do usuário.
+		senha: Campo que contém a senha para o login do usuário.
+		cpf: Campo que armazena o número de Cadastro de Pessoa Física do usuário.
+		bairro: Campo que armazena o bairro onde reside o usuário.
+		numero: Campo que contém o número da casa do usuário.
+		desc_logradouro: Campo que armazena o nome do logradouro.
+		logradouro: Campo que guarda o tipo do logradouro.
+	
+	TABELA ESTADO: Armazena os estados que estão inseridos no banco de dados.
+		id: Campo que idetifica o estado.
+		nome: Campo que armazena a UF do estado.
 
 
 ### 6	MODELO LÓGICO<br>
