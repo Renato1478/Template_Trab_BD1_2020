@@ -106,7 +106,7 @@ Pedidos feito por um usuário
 
 
 ### 6	MODELO LÓGICO<br>
-        ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/esquema_logico.png?raw=true "Modelo Lógico")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/esquema_logico.png?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
