@@ -114,7 +114,8 @@ Pedidos feito por um usuário
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
 
-        CREATE TABLE USUARIO (
+       CREATE TABLE USUARIO 
+       (
         id serial,
         id_cidade int,
         nome varchar(100),
@@ -127,164 +128,110 @@ Pedidos feito por um usuário
         logradouro varchar(100),
         desc_logradouro varchar(100),
         primary key(id)
-       );
-       alter table usuario add constraint fk_id_cidade foreign key(id_cidade) references cidade(id);
+      );
 
-       CREATE TABLE ESTADO
-       (
-        id serial,
-        nome char(2),
-        primary key(id)
-       );
+      CREATE TABLE ESTADO
+      (
+       id serial,
+       nome char(2),
+       primary key(id)
+      );
 
-       CREATE TABLE CIDADE
-       (
-        id serial,
-        id_estado int,
-        nome varchar(50),
-        primary key(id),
-        foreign key(id_estado) references estado(id)
-       );
+      CREATE TABLE CIDADE
+      (
+       id serial,
+       id_estado int,
+       nome varchar(100),
+       primary key(id),
+       foreign key(id_estado) references estado(id)
+      );
+      alter table usuario add constraint fk_id_cidade foreign key(id_cidade) references cidade(id);
 
-       CREATE TABLE CASA_ADOCAO(
-        id serial,
-        id_cidade int,
-        email varchar(100),
-        senha varchar(25),
-        nome varchar(50),
-        bairro varchar(100),
-        numero int,
-        logradouro varchar(100),
-        desc_logradouro varchar(100),
-        primary key(id),
-        foreign key(id_cidade) references cidade(id)
-       );
+      CREATE TABLE CASA_ADOCAO(
+       id serial,
+       id_cidade int,
+       email varchar(100),
+       senha varchar(25),
+       nome varchar(100),
+       bairro varchar(100),
+       numero int,
+       logradouro varchar(100),
+       desc_logradouro varchar(100),
+       primary key(id),
+       foreign key(id_cidade) references cidade(id)
+      );
 
-       CREATE TABLE ANIMAL(
-        id serial,
-        data_nascimento date,
-        id_casa_adocao int,
-        id_raca int,
-        id_tipo int,
-        CONSTRAINT fk_id_casa_adocao
-        FOREIGN KEY(id_casa_adocao) 
-        REFERENCES CASA_ADOCAO(id),
-        CONSTRAINT fk_id_raca
-        FOREIGN KEY(id_raca) 
-        REFERENCES RACA(id),
-        CONSTRAINT fk_id_tipo
-        FOREIGN KEY(id_tipo) 
-        REFERENCES TIPO(id),
-        primary key(id)
-       );
+      CREATE TABLE RACA
+      (
+       id int,
+       nome varchar(100),
+       primary key(id)
+      );
 
-       CREATE TABLE RACA
-       (
-        id int,
-        nome varchar(50),
-        primary key(id)
-       );
+      CREATE TABLE TIPO
+      (
+       id int,
+       descricao varchar(25),
+       primary key(id)
+      );
 
-       CREATE TABLE TIPO
-       (
-        id int,
-        descricao varchar(25),
-        primary key(id)
-       );
+      CREATE TABLE STATUS
+      (
+       id int,
+       descricao varchar(10),
+       primary key(id)
+      );
 
-       CREATE TABLE PEDIDO_ADOCAO(
-        id serial,
-        mensagem varchar(255),
-        data_solicitacao date,
-        data_conclusao date,
-        id_status int,
-        id_usuario int,
-        id_casa_adocao int,
-        id_animal int,
-        PRIMARY KEY (id),
-        CONSTRAINT fk_pedido_usuario
-        FOREIGN KEY(id_usuario) 
-        REFERENCES USUARIO(id),
-        CONSTRAINT fk_pedido_casa_adocao
-        FOREIGN KEY(id_casa_adocao)
-        REFERENCES CASA_ADOCAO(id),
-        CONSTRAINT fk_pedido_animal
-        FOREIGN KEY(id_animal)
-        REFERENCES ANIMAL(id),
-        CONSTRAINT fk_status
-        FOREIGN KEY(id_status)
-        REFERENCES STATUS(id)
-       );
+      CREATE TABLE ANIMAL(
+       id serial,
+       nome varchar(100),
+      data_nascimento date,
+       id_casa_adocao int,
+       id_raca int,
+       id_tipo int,
+       CONSTRAINT fk_id_casa_adocao
+       FOREIGN KEY(id_casa_adocao) 
+       REFERENCES CASA_ADOCAO(id),
+       CONSTRAINT fk_id_raca
+       FOREIGN KEY(id_raca) 
+       REFERENCES RACA(id),
+       CONSTRAINT fk_id_tipo
+       FOREIGN KEY(id_tipo) 
+       REFERENCES TIPO(id),
+       primary key(id)
+      );
 
-       CREATE TABLE STATUS
-       (
-        id int,
-        descricao varchar(25),
-        primary key(id)
-       );
+      CREATE TABLE PEDIDO_ADOCAO(
+       id serial,
+       mensagem varchar(255),
+       data_solicitacao date,
+       data_conclusao date,
+       id_status int,
+       id_usuario int,
+       id_casa_adocao int,
+       id_animal int,
+       PRIMARY KEY (id),
+       CONSTRAINT fk_pedido_usuario
+       FOREIGN KEY(id_usuario) 
+       REFERENCES USUARIO(id),
+       CONSTRAINT fk_pedido_casa_adocao
+       FOREIGN KEY(id_casa_adocao)
+       REFERENCES CASA_ADOCAO(id),
+       CONSTRAINT fk_pedido_animal
+       FOREIGN KEY(id_animal)
+       REFERENCES ANIMAL(id),
+       CONSTRAINT fk_status
+       FOREIGN KEY(id_status)
+       REFERENCES STATUS(id)
+      );
+
 
 
 
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
-        
-        Inserts da tabela Usuário:
-        INSERT INTO USUARIO (cidade, estado, nome, telefone, email, senha, cpf, bairro, numero, desc_logradouro, logradouro) VALUES
-        ('Serra', 'ES', 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 'Jardim Carapina', 197, 'Conceição do Castelo', 'Rua'),
-        ('Vilha Velha', 'ES', 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 'São Torquato', 191, 'Américo Buaiz', 'Avenida'),
-        ('Vitória', 'ES', 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 'Maria Ortiz', 293, '24 de maio', 'Rua'),
-        ('Domingos Martins', 'ES', 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 'Arace', 912, 'Afrânio Peixoto', 'Avenida'),
-        ('São Mateus', 'ES', 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 'Vintem', 561, ' das Espatodias', 'Alameda'),
-        ('Muniz Freire', 'ES', 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 'Menino Jesus', 831, 'Fernando Ferrari', 'Avenida'),
-        ('São Paulo','SP', 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 'Água Rasa', 341, '9 de Julho', 'Avenida'),
-        ('Belo Horizonte', 'MG', 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 'Buritis', 455, 'Olegario Maciel', 'Avenida'),
-        ('Rio de Janeiro', 'RJ', 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 'Botafogo', 555, 'Alvaro Chaves', 'Rua'),
-        ('Porto Alegre', 'RS', 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 'Aberta dos Morros', 980, 'Lopo Gonçalves', 'Rua');
-        
-        Inserts da tabela Casa_Adocao:
-        INSERT INTO CASA_ADOCAO (estado, email, senha, nome, cidade, bairro, numero, desc_logradouro, logradouro) VALUES
-        ('ES', 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 'Serra', 'America', 167, 'Laranjeiras', 'Avenida'), 
-        ('ES', 'prondogadocao@email.com', 'An1m4l', 'PronDog', 'Vitória', 'Bento Ferreira', 342, 'Amenófis de Assis', 'Rua'),
-        ('ES', 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 'Vila Velha', 'Alvorada', 121, 'Netuno', 'Rua'),
-        ('SP', 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 'São Paulo', 'Água Rasa', 301, 'Três Rios', 'Rua'),
-        ('SP', 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 'São Paulo', 'Sé Bela Vista', 296, 'Galvão Bueno', 'Rua'),
-        ('MG', 'petrural97@email.com', 'Queijominas', 'Pet Rural', 'Belo Horizonte', 'Buritis', 62, 'Olegário Maciel', 'Avenida'),
-        ('RJ', 'parisadocao@email.com', 'Torrepets90', 'La Paris', 'Rio de Janeiro', 'Botafogo', 347, 'Álvaro Chaves', 'Rua'),
-        ('RJ', 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 'Rio de Janeiro', 'Barra da Tijuca', 100, 'Seu Madruga', 'Avenida'),
-        ('RS', 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 'Porto Alegre', 'Aberta dos Morros', 766, 'Lupo Gonçalves', 'Rua');
-        
-        Inserts da tabela Animal:
-        INSERT INTO ANIMAL (tipo, raca, data_nascimento, nome, id_casa_adocao) VALUES
-        ('Cachorro', 'Pinscher', '2020-11-22', 'Zequinha', 1),
-        ('Pássaro', 'Canário', '2020-09-28', 'Piu-piu', 2),
-        ('Gato', 'Persa', '2018-12-13', 'Garfield', 3),
-        ('Peixe', 'Palhaço', '2020-06-07', 'Marlin', 3),
-        ('Jabuti', 'Piranga', '2014-09-22', 'Oogway', 5),
-        ('Cachorro', 'Yorkshire', '2017-03-17', 'Snoopy', 9),
-        ('Porquinho-da-Índia', 'Rex', '2019-10-12', 'Malaquias', 1),
-        ('Gato', 'Pelo Curto Inglês', '2016-04-02', 'Tea-Lord', 8),
-        ('Cobra', 'Milho', '2018-05-29', 'Python', 6),
-        ('Coelho', 'Anão Holandês', '2015-11-16', 'Pernalonga', 2),
-        ('Cachorro', 'Dogue Alemão', '2012-02-19', 'Scooby-Doo', 5);
-        
-        Inserts da tabela Pedido_Adocao:
-        INSERT INTO PEDIDO_ADOCAO (mensagem, status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
-        ('Olá, Gostaria de adotar o Garfield.', 'Pendente', '2021-02-08', null, 1, 3, 3),
-        ('Olá, Gostaria de adotar o Piu-piu', 'Pendente', '2021-02-07', null, 2, 2, 2),
-        ('Olá, Gostaria de adotar o Pernalonga', 'Aceito', '2017-02-16', '2017-02-23', 8, 2, 10),
-        ('Olá, Gostaria de adotar o Marlin', 'Recusado', '2020-09-10', '2020-09-11', 9, 3, 4),
-        ('Olá, Gostaria de adotar o Marlin', 'Aceito', '2020-10-01', '2020-10-03', 1, 3, 4),
-        ('Olá, Gostaria de adotar o Python', 'Recusado', '2019-04-03', '2019-04-06', 3, 6, 9),
-        ('Olá, Gostaria de adotar o Oogway', 'Pendente', '2020-12-25', null, 7, 5, 5),
-        ('Olá, Gostaria de adotar o Garfield', 'Pendente', '2021-02-08', null, 6, 3, 3),
-        ('Olá, Gostaria de adotar o Malaquias', 'Aceito', '2019-12-02', '2019-12-02', 10, 1, 7);
-
+       
 
 
 
