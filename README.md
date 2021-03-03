@@ -98,8 +98,6 @@ Pedidos feito por um usuário
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
-    
 	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
 		id: Campo que identifica o usuário na tabela (chave primária).
 		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
