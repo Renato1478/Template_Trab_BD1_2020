@@ -88,7 +88,7 @@ Pedidos feito por um usuário
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/discipbd1/trab01/blob/master/images/mapa_conceitual.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/mapa_conceitual.png?raw=true "Modelo Conceitual")
     
     
         
