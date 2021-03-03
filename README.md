@@ -101,8 +101,8 @@ Pedidos feito por um usuário
     [objeto]: [descrição do objeto]
     
 	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
-		id: Campo que identifica o usuário na tabela.
-		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira).
+		id: Campo que identifica o usuário na tabela (chave primária).
+		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
 		nome: Campo que contém o nome do usuário.
 		telefone: Campo que armazena um telefone de contato do usuário.
 		email: Campo que armazena um email para o login do usuário.
@@ -114,8 +114,52 @@ Pedidos feito por um usuário
 		logradouro: Campo que guarda o tipo do logradouro.
 	
 	TABELA ESTADO: Armazena os estados que estão inseridos no banco de dados.
-		id: Campo que idetifica o estado.
+		id: Campo que idetifica o estado (chave primária).
 		nome: Campo que armazena a UF do estado.
+		
+	TABELA CIDADE: Armazena as informações relativas as cidades inseridas no banco de dados.
+		id: Campo que idetifica a cidade (chave primária).
+		id_estado: Campo que identifica o estado a que a cidade pertence (chave estrangeira da tabela ESTADO).
+		nome: Campo que contém o nome da cidade.
+	
+	TABELA PEDIDO_ADOCAO: Armazena as informações dos pedidos de adoção feitos pelo usuário a casa de adoção.
+		id: Campo que identifica o pedido (chave primária).
+		id_status: Campo que identifica a situação do pedido (chave estrangeira da tabela STATUS).
+		id_usuario: Campo que identifica a quem é o usuário que fez o pedido (chave estrangeira da tabela USUARIO).
+		id_casa_adocao: Campo que identifica a qual casa de adoção o pedido foi feito (chave estrangeira da tabela CASA_ADOCAO).
+		id_animal: Campo que identifica qual animal foi pedido pelo usuário (chave estrangeira da tabela ANIMAL).
+		mensagem: Campo que contém a mensagem do usuário para a casa de adoção pedindo algum animal.
+		data_solicitacao: Campo que possui a data de solicitação do pedido de adoção.
+		data_conclusao: Campo que possui a data de conclusão do pedido de adoção.
+	
+	TABELA STATUS: Armazena a situação de um pedido de adoção.
+		id: Campo que identifica a situação de um pedido (chave primária).
+		descrição: Campo que contém a situação de um pedido de adoção.
+	
+	TABELA CASA_ADOCAO: Armazena as informações referentes a casa de adoção.
+		id: Campo que identifica a casa de adoção (chave primária).
+		id_cidade: Campo que identifica a cidade que a casa de adoção pertence (chave estrangeira da tabela CIDADE).
+		email: Campo que armazena um email para o login da casa de adoção.
+		senha: Campo que contém a senha para o login da casa de adoção.
+		bairro: Campo que armazena o bairro onde fica a casa de adoção.
+		numero: Campo que contém o número da casa de adoção.
+		desc_logradouro: Campo que armazena o nome do logradouro da casa de adoção.
+		logradouro: Campo que guarda o tipo do logradouro da casa de adoção.
+		
+	TABELA ANIMAL: Armazena as informações referentes aos animais cadastrados pela casa de adoção.
+		id: Campo que identifica o animal (chave primária).
+		id_casa_adocao: Campo que identifica a casa de adoção (chave estrangeira da tabela CASA_ADOCAO).
+		id_raca: Campo que identifica a raça do animal (chave estrangeira da tabela RACA).
+		id_raca: Campo que identifica o tipo de animal (chave estrangeira da tabela TIPO).
+		nome: Campo que contém o nome do animal.
+		
+	TABELA RACA: Armazena informações referentes a raça do animal.
+		id: Campo que identifica a raça de um animal (chave primária).
+		nome: Campo com o nome da raça.
+		
+	TABELA TIPO: Armazena informações referentes ao tipo do animal.
+		id: Campo que identifica o tipo de um animal (chave primária).
+		descricao: Campo que contém qual o tipo do animal (ex:cachorro, gato, pássaro, etc).
 
 
 ### 6	MODELO LÓGICO<br>
