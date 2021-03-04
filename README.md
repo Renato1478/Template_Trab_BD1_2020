@@ -72,8 +72,7 @@ Pedidos feito por um usuário
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
+
     
 ![Exemplo de Tabela de dados do sistema AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/item_4.3_tabela.xlsx?raw=true "Tabela - AchaPatas")
     
