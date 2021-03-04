@@ -387,6 +387,46 @@ Pedidos feito por um usuário
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
+SELECT * FROM USUARIO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO1.png?raw=true "Select usuario Parte 1")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO2.png?raw=true "Select usuario Parte 2")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO3.png?raw=true "Select usuario Parte 3")
+
+SELECT * FROM ANIMAL;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL.png?raw=true "Select animal")
+
+SELECT * FROM CASA_ADOCAO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CASA_ADOCAO.png?raw=true "Select casa_adocao")
+
+SELECT * FROM CIDADE;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CIDADE.png?raw=true "Select cidade")
+
+SELECT * FROM ESTADO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ESTADO.png?raw=true "Select estado")
+
+SELECT * FROM PEDIDO_ADOCAO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_PEDIDO_ADOCAO.png?raw=true "Select pedido_adocao")
+
+SELECT * FROM RACA;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_RACA.png?raw=true "Select raca")
+
+SELECT * FROM TIPO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_TIPO.png?raw=true "Select tipo")
+
+SELECT * FROM STATUS;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_STATUS.png?raw=true "Select status")
+
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
