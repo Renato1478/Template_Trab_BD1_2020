@@ -317,15 +317,16 @@ Pedidos feito por um usuário
     (10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 'Aberta dos Morros', 980, 'Lopo Gonçalves', 'Rua');
 
     INSERT INTO CASA_ADOCAO (id_cidade, email, senha, nome, bairro, numero, desc_logradouro, logradouro) VALUES
-    (1, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 'America', 167, 'Laranjeiras', 'Avenida'),
-    (2, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 'Bento Ferreira', 342, 'Amenófis de Assis', 'Rua'),
-    (3, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 'Alvorada', 121, 'Netuno', 'Rua'),
-    (7, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 'Água Rasa', 301, 'Três Rios', 'Rua'),
-    (7, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 'Sé Bela Vista', 296, 'Galvão Bueno', 'Rua'),
-    (8, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 'Buritis', 62, 'Olegário Maciel', 'Avenida'),
+    (3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 'America', 167, 'Laranjeiras', 'Avenida'),
+    (1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 'Bento Ferreira', 342, 'Amenófis de Assis', 'Rua'),
+    (7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 'Alvorada', 121, 'Netuno', 'Rua'),
+    (5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 'Água Rasa', 301, 'Três Rios', 'Rua'),
+    (10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 'Sé Bela Vista', 296, 'Galvão Bueno', 'Rua'),
+    (4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 'Buritis', 62, 'Olegário Maciel', 'Avenida'),
     (9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 'Botafogo', 347, 'Álvaro Chaves', 'Rua'),
-    (9, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 'Barra da Tijuca', 100, 'Seu Madruga', 'Avenida'),
-    (10, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 'Aberta dos Morros', 766, 'Lupo Gonçalves', 'Rua');
+    (6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 'Barra da Tijuca', 100, 'Seu Madruga', 'Avenida'),
+    (8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 'Aberta dos Morros', 766, 'Lupo Gonçalves', 'Rua'),
+    (2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 'Ibatiba', 543, 'Hebreus lapide', 'Avenida');
 
     INSERT INTO TIPO (id, descricao) VALUES
     (1, 'Cachorro'),
@@ -377,7 +378,8 @@ Pedidos feito por um usuário
     ('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 6, 9),
     ('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 5, 5),
     ('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 3, 3),
-    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 1, 7);
+    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 1, 7),
+    ('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
 
 
 
