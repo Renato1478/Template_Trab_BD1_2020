@@ -75,7 +75,7 @@ Pedidos feito por um usuário
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
     b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Exemplo de Tabela de dados do sistema AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/item_4.3_tabela.xlsx?raw=true "Tabela - AchaPatas")
     
     
 ### 5.MODELO CONCEITUAL<br>
