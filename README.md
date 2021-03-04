@@ -370,15 +370,15 @@ Pedidos feito por um usuário
     (3, 'Aceito');
 
     INSERT INTO PEDIDO_ADOCAO (mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
-    ('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 1, 3, 3),
-    ('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 2, 2),
-    ('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 2, 10),
-    ('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 3, 4),
-    ('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 3, 4),
-    ('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 6, 9),
-    ('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 5, 5),
-    ('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 3, 3),
-    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 1, 7),
+    ('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 5, 4, 3),
+    ('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 1, 2),
+    ('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 9, 10),
+    ('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 7, 4),
+    ('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 2, 4),
+    ('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 10, 9),
+    ('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 3, 5),
+    ('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
+    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
     ('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
 
 
