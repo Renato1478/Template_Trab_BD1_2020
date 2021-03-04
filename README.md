@@ -348,7 +348,7 @@ Pedidos feito por um usuário
     (7, 'Pelo Curto Inglês'),
     (8, 'Milho'),
     (9, 'Anão Holandês'),
-    (10, 'Dogue Alemão')
+    (10, 'Dogue Alemão'),
     (11, 'Palhaço');
 
     INSERT INTO ANIMAL (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
