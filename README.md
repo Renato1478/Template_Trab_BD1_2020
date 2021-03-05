@@ -159,19 +159,15 @@ Pedidos feito por um usuário
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/modelo_logico.png?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
-
        CREATE TABLE USUARIO 
        (
         id serial,
-        id_cidade int,
+	id_bairro int,
         nome varchar(100),
         telefone int,
         email varchar(100),
         senha varchar(25),
         cpf int,
-        bairro varchar(50),
         numero int,
         logradouro varchar(100),
         desc_logradouro varchar(100),
@@ -193,20 +189,27 @@ Pedidos feito por um usuário
        primary key(id),
        foreign key(id_estado) references estado(id)
       );
-      alter table usuario add constraint fk_id_cidade foreign key(id_cidade) references cidade(id);
-
+      
+      CREATE TABLE BAIRRO
+      (
+       id serial;
+       id_cidade int,
+       nome varchar(45),
+       foreign key(id_cidade) references cidade(id)
+      );
+      alter table usuario add constraint fk_id_bairro foreign key(id_bairro) references bairro(id);
+      
       CREATE TABLE CASA_ADOCAO(
        id serial,
-       id_cidade int,
+       id_bairro int,
        email varchar(100),
        senha varchar(25),
        nome varchar(100),
-       bairro varchar(100),
        numero int,
        logradouro varchar(100),
        desc_logradouro varchar(100),
        primary key(id),
-       foreign key(id_cidade) references cidade(id)
+       foreign key(id_bairro) references bairro(id)
       );
 
       CREATE TABLE RACA
