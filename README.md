@@ -240,7 +240,7 @@ Pedidos feito por um usuário
       CREATE TABLE ANIMAL(
        id serial,
        nome varchar(100),
-      data_nascimento date,
+       data_nascimento date,
        id_casa_adocao int,
        id_raca int,
        id_tipo int,
