@@ -114,7 +114,7 @@ Pedidos feito por um usuário
 		id_estado: Campo que identifica o estado a que a cidade pertence (chave estrangeira da tabela ESTADO).
 		nome: Campo que contém o nome da cidade.
     
-    TABELA BAIRRO: Armazena as informações relativas aos biarros inseridos no banco de dados.
+    TABELA BAIRRO: Armazena as informações relativas aos bairros inseridos no banco de dados.
 		id: Campo que idetifica a bairro (chave primária).
 		id_cidade: Campo que identifica a cidade a que o bairro pertence (chave estrangeira da tabela BAIRRO).
 		nome: Campo que contém o nome do bairro.
