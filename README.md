@@ -58,24 +58,19 @@ Pedidos feito por um usuário
 
 ![Arquivo PDF do Protótipo Balsamiq feito para o sistema de adoção de animais - AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/Prot%C3%B3tipo%20-%20AchaPatas.pdf?raw=true "AchaPatas")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que mostre o nome de cada supervisor(a) e a quantidade de empregados supervisionados.
-* Relatório relativo aos os supervisores e supervisionados. O resultado deve conter o nome do supervisor e nome do supervisionado além da quantidade total de horas que cada supervisionado tem alocada aos projetos existentes na empresa.
-* Relatorio que mostre para cada linha obtida o nome do departamento, o valor individual de cada salario existente no  departamento e a média geral de salarios dentre todos os empregados. Os resultados devem ser apresentados ordenados por departamento.
-* Relatório que mostre as informações relacionadas a todos empregados de empresa (sem excluir ninguém). As linhas resultantes devem conter informações sobre: rg, nome, salario do empregado, data de início do salario atual, nomes dos projetos que participa, quantidade de horas e localização nos referidos projetos, numero e nome dos departamentos aos quais está alocado, informações do historico de salário como inicio, fim, e valores de salarios antigos que foram inclusos na referida tabela (caso possuam informações na mesma), além de todas informações relativas aos dependentes. 
->> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
-* Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
-
+> O aplicativo AchaPatas precisa inicialmente dos seguintes relatórios:
+* Relatório que mostre o nome de cada casa de adoção e o número de animais cadastrados no sistema.
+* Relatório relativo aos os animais adotados e adotadores. O resultado deve conter o nome do usuario e nome do animal além da data em que o pedido de adoção foi concluído.
+* Relatório que mostre a quantidade de casas de adoção em cada cidade. O resultado deverá conter o nome da cidade e da casa de adoção.
+* Relatório que mostre todos os dados relativos a todos os animais cadastrados vinculados à uma casa de adocao. O resultado deverá conter o nome, tipo, raça, data de nascimento, já da casa de adoção deve ser mostrado nome e email. Os registros devem ser ordenados pelo nome do animal em ordem alfabética.   
+* Relatório que obtenha os dados de todos os pedidos e adoção e suas relações com animal e usuário. Será apresentado os dados relativos a todos os pedidos de adoção com os dados do usuário e animais.
+>> ##### Observações: <br>perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos).. 
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
+
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Exemplo de Tabela de dados do sistema AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/item_4.3_tabela.xlsx?raw=true "Tabela - AchaPatas")
     
     
 ### 5.MODELO CONCEITUAL<br>
@@ -97,7 +92,7 @@ Pedidos feito por um usuário
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
-#### 5.2 Descrição dos dados   
+#### 5.2 Descrição dos dados 
 	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
 		id: Campo que identifica o usuário na tabela (chave primária).
 		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
@@ -285,6 +280,101 @@ Pedidos feito por um usuário
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
        
+    INSERT INTO ESTADO (nome) VALUES
+    ('ES'),
+    ('SP'),
+    ('MG'),
+    ('RJ'),
+    ('RS');
+
+    INSERT INTO CIDADE (id_estado, nome) VALUES
+    (1, 'Serra'),
+    (1, 'Vitória'),
+    (1, 'Vila Velha'),
+    (1, 'Domingos Martins'),
+    (1, 'São Mateus'),
+    (1, 'Muniz Freire'),
+    (2, 'São Paulo'),
+    (3, 'Belo Horizonte'),
+    (4, 'Rio de Janeiro'),
+    (5, 'Porto Alegre');
+
+    INSERT INTO USUARIO (id_cidade, nome, telefone, email, senha, cpf, bairro, numero, logradouro, desc_logradouro) VALUES
+    (1, 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 'Jardim Carapina', 197, 'Conceição do Castelo', 'Rua'),
+    (3, 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 'São Torquato', 191, 'Américo Buaiz', 'Avenida'),
+    (2, 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 'Maria Ortiz', 293, '24 de maio', 'Rua'),
+    (4, 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 'Arace', 912, 'Afrânio Peixoto', 'Avenida'),
+    (5, 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 'Vintem', 561, ' das Espatodias', 'Alameda'),
+    (6, 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 'Menino Jesus', 831, 'Fernando Ferrari', 'Avenida'),
+    (7, 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 'Água Rasa', 341, '9 de Julho', 'Avenida'),
+    (8, 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 'Buritis', 455, 'Olegario Maciel', 'Avenida'),
+    (9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 'Botafogo', 555, 'Alvaro Chaves', 'Rua'),
+    (10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 'Aberta dos Morros', 980, 'Lopo Gonçalves', 'Rua');
+
+    INSERT INTO CASA_ADOCAO (id_cidade, email, senha, nome, bairro, numero, desc_logradouro, logradouro) VALUES
+    (3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 'America', 167, 'Laranjeiras', 'Avenida'),
+    (1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 'Bento Ferreira', 342, 'Amenófis de Assis', 'Rua'),
+    (7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 'Alvorada', 121, 'Netuno', 'Rua'),
+    (5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 'Água Rasa', 301, 'Três Rios', 'Rua'),
+    (10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 'Sé Bela Vista', 296, 'Galvão Bueno', 'Rua'),
+    (4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 'Buritis', 62, 'Olegário Maciel', 'Avenida'),
+    (9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 'Botafogo', 347, 'Álvaro Chaves', 'Rua'),
+    (6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 'Barra da Tijuca', 100, 'Seu Madruga', 'Avenida'),
+    (8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 'Aberta dos Morros', 766, 'Lupo Gonçalves', 'Rua'),
+    (2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 'Ibatiba', 543, 'Hebreus lapide', 'Avenida');
+
+    INSERT INTO TIPO (id, descricao) VALUES
+    (1, 'Cachorro'),
+    (2, 'Gato'),
+    (3, 'Pássaro'),
+    (4, 'Peixe'),
+    (5, 'Jabuti'),
+    (6, 'Porquinho-da-Índia'),
+    (7, 'Cobra'),
+    (8, 'Coelho');
+
+    INSERT INTO RACA (id, nome) VALUES
+    (1, 'Pinscher'),
+    (2, 'Canário'),
+    (3, 'Persa'),
+    (4, 'Piranga'),
+    (5, 'Yorkshire'),
+    (6, 'Rex'),
+    (7, 'Pelo Curto Inglês'),
+    (8, 'Milho'),
+    (9, 'Anão Holandês'),
+    (10, 'Dogue Alemão'),
+    (11, 'Palhaço');
+
+    INSERT INTO ANIMAL (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
+    (1, 1, '2020-11-22', 'Zequinha', 1),
+    (2, 3, '2020-09-28', 'Piu-piu', 2),
+    (3, 2, '2018-12-13', 'Garfield', 3),
+    (11, 4, '2020-06-07', 'Marlin', 3),
+    (4, 5, '2014-09-22', 'Oogway', 5),
+    (5, 1, '2017-03-17', 'Snoopy', 9),
+    (6, 6, '2019-10-12', 'Malaquias', 1),
+    (7, 2, '2016-04-02', 'Tea-Lord', 8),
+    (8, 7, '2018-05-29', 'Python', 6),
+    (9, 8, '2015-11-16', 'Pernalonga', 2),
+    (10, 1, '2012-02-19', 'Scooby-Doo', 5);
+
+    INSERT INTO STATUS (id, descricao) VALUES
+    (1, 'Pendente'),
+    (2, 'Recusado'),
+    (3, 'Aceito');
+
+    INSERT INTO PEDIDO_ADOCAO (mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
+    ('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 5, 4, 3),
+    ('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 1, 2),
+    ('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 9, 10),
+    ('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 7, 4),
+    ('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 2, 4),
+    ('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 10, 9),
+    ('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 3, 5),
+    ('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
+    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
+    ('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
 
 
 
@@ -293,6 +383,46 @@ Pedidos feito por um usuário
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
+SELECT * FROM USUARIO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO1.png?raw=true "Select usuario Parte 1")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO2.png?raw=true "Select usuario Parte 2")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO3.png?raw=true "Select usuario Parte 3")
+
+SELECT * FROM ANIMAL;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL.png?raw=true "Select animal")
+
+SELECT * FROM CASA_ADOCAO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CASA_ADOCAO.png?raw=true "Select casa_adocao")
+
+SELECT * FROM CIDADE;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CIDADE.png?raw=true "Select cidade")
+
+SELECT * FROM ESTADO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ESTADO.png?raw=true "Select estado")
+
+SELECT * FROM PEDIDO_ADOCAO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_PEDIDO_ADOCAO.png?raw=true "Select pedido_adocao")
+
+SELECT * FROM RACA;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_RACA.png?raw=true "Select raca")
+
+SELECT * FROM TIPO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_TIPO.png?raw=true "Select tipo")
+
+SELECT * FROM STATUS;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_STATUS.png?raw=true "Select status")
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
