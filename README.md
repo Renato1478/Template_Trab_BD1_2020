@@ -277,8 +277,6 @@ Pedidos feito por um usuário
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-      
-	begin;
 	INSERT INTO ESTADO (nome) VALUES
 	('ES'),
 	('SP'),
@@ -386,7 +384,6 @@ Pedidos feito por um usuário
 	('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
 	('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
 	('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
-	commit;
 
 
 
