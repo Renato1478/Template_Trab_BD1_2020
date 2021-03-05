@@ -197,9 +197,10 @@ Pedidos feito por um usuário
       
       CREATE TABLE BAIRRO
       (
-       id serial;
+       id serial,
        id_cidade int,
        nome varchar(45),
+       primary key(id),
        foreign key(id_cidade) references cidade(id)
       );
       alter table usuario add constraint fk_id_bairro foreign key(id_bairro) references bairro(id);
