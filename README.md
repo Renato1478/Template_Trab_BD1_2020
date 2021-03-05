@@ -18,7 +18,7 @@ Este documento contém a especificação do projeto do banco de dados <AchaPatas
 
 ### 3.MINI-MUNDO<br>
 
-> Os dados dos animais serão nome, raça, data de nascimento e tipo (gato, cão, pássaro, entre outros...). Os usuários serão cadastrados por cpf, nome, email, telefone, endereço e senha do sistema. As casas de adoção serão cadastradas por email, nome, telefone, endereço e senha do sistema. Cada animal pertence a uma casa de adoção, e uma casa de adoção pode ter vários animais. Os animais poderão ser adotados por um pedido de adoção às casas, que serão aceitos ou recusados. Cada pedido de adoção terá o seu código, uma mensagem, um status de aceito/não aceito, a data de solicitação e a data de conclusão. Um usuário pode fazer vários ou nenhum pedido de adoção.
+> Os dados dos animais serão nome, raça, data de nascimento e tipo (gato, cão, pássaro, entre outros...). Os usuários serão cadastrados por cpf, nome, um email, apenas telefone, endereço e senha do sistema. As casas de adoção serão cadastradas por um email, nome, apenas um telefone, endereço e senha do sistema. Cada animal pertence a uma casa de adoção, e uma casa de adoção pode ter vários animais. Os animais poderão ser adotados por um pedido de adoção às casas, que serão aceitos ou recusados. Cada pedido de adoção terá o seu código, uma mensagem, um status de aceito, pendente ou não aceito, a data de solicitação e a data de conclusão. Um usuário pode fazer vários ou nenhum pedido de adoção.
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -73,35 +73,29 @@ Pedidos feito por um usuário
 ![Exemplo de Tabela de dados do sistema AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/item_4.3_tabela.xlsx?raw=true "Tabela - AchaPatas")
     
     
-### 5.MODELO CONCEITUAL<br>
-    A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
-    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
-        * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
-    C) Principais fluxos de informação/entidades do sistema (mínimo 3). <br>Dica: normalmente estes fluxos estão associados as tabelas que conterão maior quantidade de dados 
-    D) Qualidade e Clareza
-        Garantir que a semântica dos atributos seja clara no esquema (nomes coerentes com os dados).
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas (Aplicar os conceitos de normalização abordados).   
-        
+### 5.MODELO CONCEITUAL<br>       
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/mapa_conceitual.png?raw=true "Modelo Conceitual")
     
     
         
     
 #### 5.1 Validação do Modelo Conceitual
+<<<<<<< HEAD
     [Grupo01]: [Nomes dos que participaram na avaliação] teste
+=======
+    [Grupo01]: Matheus de Souza, Thaís de Souza e Rodrigo Raider
+>>>>>>> 44d75d558e728e5cdf01fed84012768a1bd680b0
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
 	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
 		id: Campo que identifica o usuário na tabela (chave primária).
-		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
+		id_bairro: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
 		nome: Campo que contém o nome do usuário.
 		telefone: Campo que armazena um telefone de contato do usuário.
 		email: Campo que armazena um email para o login do usuário.
 		senha: Campo que contém a senha para o login do usuário.
 		cpf: Campo que armazena o número de Cadastro de Pessoa Física do usuário.
-		bairro: Campo que armazena o bairro onde reside o usuário.
 		numero: Campo que contém o número da casa do usuário.
 		desc_logradouro: Campo que armazena o nome do logradouro.
 		logradouro: Campo que guarda o tipo do logradouro.
@@ -114,6 +108,11 @@ Pedidos feito por um usuário
 		id: Campo que idetifica a cidade (chave primária).
 		id_estado: Campo que identifica o estado a que a cidade pertence (chave estrangeira da tabela ESTADO).
 		nome: Campo que contém o nome da cidade.
+    
+    TABELA BAIRRO: Armazena as informações relativas aos bairros inseridos no banco de dados.
+		id: Campo que idetifica a bairro (chave primária).
+		id_cidade: Campo que identifica a cidade a que o bairro pertence (chave estrangeira da tabela CIDADE).
+		nome: Campo que contém o nome do bairro.
 	
 	TABELA PEDIDO_ADOCAO: Armazena as informações dos pedidos de adoção feitos pelo usuário a casa de adoção.
 		id: Campo que identifica o pedido (chave primária).
@@ -131,10 +130,9 @@ Pedidos feito por um usuário
 	
 	TABELA CASA_ADOCAO: Armazena as informações referentes a casa de adoção.
 		id: Campo que identifica a casa de adoção (chave primária).
-		id_cidade: Campo que identifica a cidade que a casa de adoção pertence (chave estrangeira da tabela CIDADE).
+		id_bairro: Campo que identifica a cidade que a casa de adoção pertence (chave estrangeira da tabela CIDADE).
 		email: Campo que armazena um email para o login da casa de adoção.
 		senha: Campo que contém a senha para o login da casa de adoção.
-		bairro: Campo que armazena o bairro onde fica a casa de adoção.
 		numero: Campo que contém o número da casa de adoção.
 		desc_logradouro: Campo que armazena o nome do logradouro da casa de adoção.
 		logradouro: Campo que guarda o tipo do logradouro da casa de adoção.
@@ -159,19 +157,15 @@ Pedidos feito por um usuário
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/modelo_logico.png?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
-
        CREATE TABLE USUARIO 
        (
         id serial,
-        id_cidade int,
+        id_bairro int,
         nome varchar(100),
         telefone int,
         email varchar(100),
         senha varchar(25),
         cpf int,
-        bairro varchar(50),
         numero int,
         logradouro varchar(100),
         desc_logradouro varchar(100),
@@ -193,20 +187,28 @@ Pedidos feito por um usuário
        primary key(id),
        foreign key(id_estado) references estado(id)
       );
-      alter table usuario add constraint fk_id_cidade foreign key(id_cidade) references cidade(id);
-
-      CREATE TABLE CASA_ADOCAO(
+      
+      CREATE TABLE BAIRRO
+      (
        id serial,
        id_cidade int,
+       nome varchar(45),
+       primary key(id),
+       foreign key(id_cidade) references cidade(id)
+      );
+      alter table usuario add constraint fk_id_bairro foreign key(id_bairro) references bairro(id);
+      
+      CREATE TABLE CASA_ADOCAO(
+       id serial,
+       id_bairro int,
        email varchar(100),
        senha varchar(25),
        nome varchar(100),
-       bairro varchar(100),
        numero int,
        logradouro varchar(100),
        desc_logradouro varchar(100),
        primary key(id),
-       foreign key(id_cidade) references cidade(id)
+       foreign key(id_bairro) references bairro(id)
       );
 
       CREATE TABLE RACA
@@ -233,7 +235,7 @@ Pedidos feito por um usuário
       CREATE TABLE ANIMAL(
        id serial,
        nome varchar(100),
-      data_nascimento date,
+       data_nascimento date,
        id_casa_adocao int,
        id_raca int,
        id_tipo int,
@@ -279,103 +281,113 @@ Pedidos feito por um usuário
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-       
-    INSERT INTO ESTADO (nome) VALUES
-    ('ES'),
-    ('SP'),
-    ('MG'),
-    ('RJ'),
-    ('RS');
+	INSERT INTO ESTADO (nome) VALUES
+	('ES'),
+	('SP'),
+	('MG'),
+	('RJ'),
+	('RS');
 
-    INSERT INTO CIDADE (id_estado, nome) VALUES
-    (1, 'Serra'),
-    (1, 'Vitória'),
-    (1, 'Vila Velha'),
-    (1, 'Domingos Martins'),
-    (1, 'São Mateus'),
-    (1, 'Muniz Freire'),
-    (2, 'São Paulo'),
-    (3, 'Belo Horizonte'),
-    (4, 'Rio de Janeiro'),
-    (5, 'Porto Alegre');
+	INSERT INTO CIDADE (id_estado, nome) VALUES
+	(1, 'Serra'),
+	(1, 'Vitória'),
+	(1, 'Vila Velha'),
+	(1, 'Domingos Martins'),
+	(1, 'São Mateus'),
+	(1, 'Muniz Freire'),
+	(2, 'São Paulo'),
+	(3, 'Belo Horizonte'),
+	(4, 'Rio de Janeiro'),
+	(5, 'Porto Alegre');
 
-    INSERT INTO USUARIO (id_cidade, nome, telefone, email, senha, cpf, bairro, numero, logradouro, desc_logradouro) VALUES
-    (1, 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 'Jardim Carapina', 197, 'Conceição do Castelo', 'Rua'),
-    (3, 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 'São Torquato', 191, 'Américo Buaiz', 'Avenida'),
-    (2, 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 'Maria Ortiz', 293, '24 de maio', 'Rua'),
-    (4, 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 'Arace', 912, 'Afrânio Peixoto', 'Avenida'),
-    (5, 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 'Vintem', 561, ' das Espatodias', 'Alameda'),
-    (6, 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 'Menino Jesus', 831, 'Fernando Ferrari', 'Avenida'),
-    (7, 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 'Água Rasa', 341, '9 de Julho', 'Avenida'),
-    (8, 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 'Buritis', 455, 'Olegario Maciel', 'Avenida'),
-    (9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 'Botafogo', 555, 'Alvaro Chaves', 'Rua'),
-    (10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 'Aberta dos Morros', 980, 'Lopo Gonçalves', 'Rua');
+	INSERT INTO BAIRRO (id_cidade, nome) VALUES
+	(1, 'Jardim Carapina'),
+	(3, 'São Torquato'),
+	(2, 'Maria Ortiz'),
+	(4, 'Arace'),
+	(5, 'Vintem'),
+	(6, 'Menino Jesus'),
+	(7, 'Água Rasa'),
+	(8, 'Buritis'),
+	(9, 'Botafogo'),
+	(10, 'Aberta dos Morros');
 
-    INSERT INTO CASA_ADOCAO (id_cidade, email, senha, nome, bairro, numero, desc_logradouro, logradouro) VALUES
-    (3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 'America', 167, 'Laranjeiras', 'Avenida'),
-    (1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 'Bento Ferreira', 342, 'Amenófis de Assis', 'Rua'),
-    (7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 'Alvorada', 121, 'Netuno', 'Rua'),
-    (5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 'Água Rasa', 301, 'Três Rios', 'Rua'),
-    (10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 'Sé Bela Vista', 296, 'Galvão Bueno', 'Rua'),
-    (4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 'Buritis', 62, 'Olegário Maciel', 'Avenida'),
-    (9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 'Botafogo', 347, 'Álvaro Chaves', 'Rua'),
-    (6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 'Barra da Tijuca', 100, 'Seu Madruga', 'Avenida'),
-    (8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 'Aberta dos Morros', 766, 'Lupo Gonçalves', 'Rua'),
-    (2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 'Ibatiba', 543, 'Hebreus lapide', 'Avenida');
+	INSERT INTO USUARIO (id_bairro, nome, telefone, email, senha, cpf, numero, logradouro, desc_logradouro) VALUES
+	(1, 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 197, 'Conceição do Castelo', 'Rua'),
+	(2, 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 191, 'Américo Buaiz', 'Avenida'),
+	(3, 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 293, '24 de maio', 'Rua'),
+	(4, 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 912, 'Afrânio Peixoto', 'Avenida'),
+	(5, 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 561, ' das Espatodias', 'Alameda'),
+	(6, 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 831, 'Fernando Ferrari', 'Avenida'),
+	(7, 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 341, '9 de Julho', 'Avenida'),
+	(8, 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 455, 'Olegario Maciel', 'Avenida'),
+	(9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 555, 'Alvaro Chaves', 'Rua'),
+	(10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 980, 'Lopo Gonçalves', 'Rua');
 
-    INSERT INTO TIPO (id, descricao) VALUES
-    (1, 'Cachorro'),
-    (2, 'Gato'),
-    (3, 'Pássaro'),
-    (4, 'Peixe'),
-    (5, 'Jabuti'),
-    (6, 'Porquinho-da-Índia'),
-    (7, 'Cobra'),
-    (8, 'Coelho');
+	INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, numero, desc_logradouro, logradouro) VALUES
+	(3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 167, 'Laranjeiras', 'Avenida'),
+	(1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 342, 'Amenófis de Assis', 'Rua'),
+	(7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 121, 'Netuno', 'Rua'),
+	(5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 301, 'Três Rios', 'Rua'),
+	(10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 296, 'Galvão Bueno', 'Rua'),
+	(4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 62, 'Olegário Maciel', 'Avenida'),
+	(9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 347, 'Álvaro Chaves', 'Rua'),
+	(6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 100, 'Seu Madruga', 'Avenida'),
+	(8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 766, 'Lupo Gonçalves', 'Rua'),
+	(2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 543, 'Hebreus lapide', 'Avenida');
 
-    INSERT INTO RACA (id, nome) VALUES
-    (1, 'Pinscher'),
-    (2, 'Canário'),
-    (3, 'Persa'),
-    (4, 'Piranga'),
-    (5, 'Yorkshire'),
-    (6, 'Rex'),
-    (7, 'Pelo Curto Inglês'),
-    (8, 'Milho'),
-    (9, 'Anão Holandês'),
-    (10, 'Dogue Alemão'),
-    (11, 'Palhaço');
+	INSERT INTO TIPO (id, descricao) VALUES
+	(1, 'Cachorro'),
+	(2, 'Gato'),
+	(3, 'Pássaro'),
+	(4, 'Peixe'),
+	(5, 'Jabuti'),
+	(6, 'Porquinho-da-Índia'),
+	(7, 'Cobra'),
+	(8, 'Coelho');
 
-    INSERT INTO ANIMAL (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
-    (1, 1, '2020-11-22', 'Zequinha', 1),
-    (2, 3, '2020-09-28', 'Piu-piu', 2),
-    (3, 2, '2018-12-13', 'Garfield', 3),
-    (11, 4, '2020-06-07', 'Marlin', 3),
-    (4, 5, '2014-09-22', 'Oogway', 5),
-    (5, 1, '2017-03-17', 'Snoopy', 9),
-    (6, 6, '2019-10-12', 'Malaquias', 1),
-    (7, 2, '2016-04-02', 'Tea-Lord', 8),
-    (8, 7, '2018-05-29', 'Python', 6),
-    (9, 8, '2015-11-16', 'Pernalonga', 2),
-    (10, 1, '2012-02-19', 'Scooby-Doo', 5);
+	INSERT INTO RACA (id, nome) VALUES
+	(1, 'Pinscher'),
+	(2, 'Canário'),
+	(3, 'Persa'),
+	(4, 'Piranga'),
+	(5, 'Yorkshire'),
+	(6, 'Rex'),
+	(7, 'Pelo Curto Inglês'),
+	(8, 'Milho'),
+	(9, 'Anão Holandês'),
+	(10, 'Dogue Alemão'),
+	(11, 'Palhaço');
 
-    INSERT INTO STATUS (id, descricao) VALUES
-    (1, 'Pendente'),
-    (2, 'Recusado'),
-    (3, 'Aceito');
+	INSERT INTO ANIMAL (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
+	(1, 1, '2020-11-22', 'Zequinha', 1),
+	(2, 3, '2020-09-28', 'Piu-piu', 2),
+	(3, 2, '2018-12-13', 'Garfield', 3),
+	(11, 4, '2020-06-07', 'Marlin', 3),
+	(4, 5, '2014-09-22', 'Oogway', 5),
+	(5, 1, '2017-03-17', 'Snoopy', 9),
+	(6, 6, '2019-10-12', 'Malaquias', 1),
+	(7, 2, '2016-04-02', 'Tea-Lord', 8),
+	(8, 7, '2018-05-29', 'Python', 6),
+	(9, 8, '2015-11-16', 'Pernalonga', 2),
+	(10, 1, '2012-02-19', 'Scooby-Doo', 5);
 
-    INSERT INTO PEDIDO_ADOCAO (mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
-    ('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 5, 4, 3),
-    ('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 1, 2),
-    ('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 9, 10),
-    ('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 7, 4),
-    ('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 2, 4),
-    ('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 10, 9),
-    ('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 3, 5),
-    ('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
-    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
-    ('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
+	INSERT INTO STATUS (id, descricao) VALUES
+	(1, 'Pendente'),
+	(2, 'Recusado'),
+	(3, 'Aceito');
 
+	INSERT INTO PEDIDO_ADOCAO (mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
+	('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 5, 4, 3),
+	('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 1, 2),
+	('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 9, 10),
+	('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 7, 4),
+	('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 2, 4),
+	('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 10, 9),
+	('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 3, 5),
+	('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
+	('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
+	('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
 
 
 
@@ -386,15 +398,15 @@ Pedidos feito por um usuário
 
 SELECT * FROM USUARIO;
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO1.png?raw=true "Select usuario Parte 1")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO%201.png?raw=true "Select usuario Parte 1")
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO2.png?raw=true "Select usuario Parte 2")
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO3.png?raw=true "Select usuario Parte 3")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO%202.png?raw=true "Select usuario Parte 2")
 
 SELECT * FROM ANIMAL;
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL.png?raw=true "Select animal")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL%201.png?raw=true "Select animal 1")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL%202.png?raw=true "Select animal 2")
 
 SELECT * FROM CASA_ADOCAO;
 
@@ -423,6 +435,10 @@ SELECT * FROM TIPO;
 SELECT * FROM STATUS;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_STATUS.png?raw=true "Select status")
+
+SELECT * FROM BAIRRO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_BAIRRO.png?raw=true "Select bairro")
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
