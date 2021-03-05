@@ -394,15 +394,15 @@ Pedidos feito por um usuário
 
 SELECT * FROM USUARIO;
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO1.png?raw=true "Select usuario Parte 1")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO%201.png?raw=true "Select usuario Parte 1")
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO2.png?raw=true "Select usuario Parte 2")
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO3.png?raw=true "Select usuario Parte 3")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_USUARIO%202.png?raw=true "Select usuario Parte 2")
 
 SELECT * FROM ANIMAL;
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL.png?raw=true "Select animal")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL%201.png?raw=true "Select animal 1")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_ANIMAL%202.png?raw=true "Select animal 2")
 
 SELECT * FROM CASA_ADOCAO;
 
@@ -431,6 +431,10 @@ SELECT * FROM TIPO;
 SELECT * FROM STATUS;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_STATUS.png?raw=true "Select status")
+
+SELECT * FROM BAIRRO;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_BAIRRO.png?raw=true "Select bairro")
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
