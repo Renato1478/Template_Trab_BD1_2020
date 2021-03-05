@@ -278,7 +278,7 @@ Pedidos feito por um usuário
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
        
-    	begin;
+       	begin;
 	INSERT INTO ESTADO (nome) VALUES
 	('ES'),
 	('SP'),
