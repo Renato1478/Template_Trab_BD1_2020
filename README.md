@@ -80,12 +80,8 @@ Pedidos feito por um usuário
         
     
 #### 5.1 Validação do Modelo Conceitual
-<<<<<<< HEAD
-    [Grupo01]: [Nomes dos que participaram na avaliação] teste
-=======
     [Grupo01]: Matheus de Souza, Thaís de Souza e Rodrigo Raider
->>>>>>> 44d75d558e728e5cdf01fed84012768a1bd680b0
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo02]: [Nomes dos que participaram na avaliação] teste
 
 #### 5.2 Descrição dos dados 
 	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
