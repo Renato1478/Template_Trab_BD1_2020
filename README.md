@@ -114,14 +114,11 @@ Pedidos feito por um usuário
 		id: Campo que idetifica a cidade (chave primária).
 		id_estado: Campo que identifica o estado a que a cidade pertence (chave estrangeira da tabela ESTADO).
 		nome: Campo que contém o nome da cidade.
-<<<<<<< HEAD
     
     TABELA BAIRRO: Armazena as informações relativas aos bairros inseridos no banco de dados.
 		id: Campo que idetifica a bairro (chave primária).
 		id_cidade: Campo que identifica a cidade a que o bairro pertence (chave estrangeira da tabela BAIRRO).
 		nome: Campo que contém o nome do bairro.
-=======
->>>>>>> 95a81a7251c6ec62be5dca3b2e966a0d03050db5
 	
 	TABELA PEDIDO_ADOCAO: Armazena as informações dos pedidos de adoção feitos pelo usuário a casa de adoção.
 		id: Campo que identifica o pedido (chave primária).
