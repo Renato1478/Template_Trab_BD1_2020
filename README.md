@@ -95,13 +95,12 @@ Pedidos feito por um usuário
 #### 5.2 Descrição dos dados 
 	TABELA USUARIO: Armazena informções relarivas ao usuário (pessoa física) do sistema.
 		id: Campo que identifica o usuário na tabela (chave primária).
-		id_cidade: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
+		id_bairro: Campo que identifica a cidade que o usuário pertence (chave estrangeira da tabela CIDADE).
 		nome: Campo que contém o nome do usuário.
 		telefone: Campo que armazena um telefone de contato do usuário.
 		email: Campo que armazena um email para o login do usuário.
 		senha: Campo que contém a senha para o login do usuário.
 		cpf: Campo que armazena o número de Cadastro de Pessoa Física do usuário.
-		bairro: Campo que armazena o bairro onde reside o usuário.
 		numero: Campo que contém o número da casa do usuário.
 		desc_logradouro: Campo que armazena o nome do logradouro.
 		logradouro: Campo que guarda o tipo do logradouro.
@@ -117,7 +116,7 @@ Pedidos feito por um usuário
     
     TABELA BAIRRO: Armazena as informações relativas aos bairros inseridos no banco de dados.
 		id: Campo que idetifica a bairro (chave primária).
-		id_cidade: Campo que identifica a cidade a que o bairro pertence (chave estrangeira da tabela BAIRRO).
+		id_cidade: Campo que identifica a cidade a que o bairro pertence (chave estrangeira da tabela CIDADE).
 		nome: Campo que contém o nome do bairro.
 	
 	TABELA PEDIDO_ADOCAO: Armazena as informações dos pedidos de adoção feitos pelo usuário a casa de adoção.
@@ -136,10 +135,9 @@ Pedidos feito por um usuário
 	
 	TABELA CASA_ADOCAO: Armazena as informações referentes a casa de adoção.
 		id: Campo que identifica a casa de adoção (chave primária).
-		id_cidade: Campo que identifica a cidade que a casa de adoção pertence (chave estrangeira da tabela CIDADE).
+		id_bairro: Campo que identifica a cidade que a casa de adoção pertence (chave estrangeira da tabela CIDADE).
 		email: Campo que armazena um email para o login da casa de adoção.
 		senha: Campo que contém a senha para o login da casa de adoção.
-		bairro: Campo que armazena o bairro onde fica a casa de adoção.
 		numero: Campo que contém o número da casa de adoção.
 		desc_logradouro: Campo que armazena o nome do logradouro da casa de adoção.
 		logradouro: Campo que guarda o tipo do logradouro da casa de adoção.
