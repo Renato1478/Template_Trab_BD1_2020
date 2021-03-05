@@ -278,102 +278,115 @@ Pedidos feito por um usuário
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
        
-    INSERT INTO ESTADO (nome) VALUES
-    ('ES'),
-    ('SP'),
-    ('MG'),
-    ('RJ'),
-    ('RS');
+    	begin;
+	INSERT INTO ESTADO (nome) VALUES
+	('ES'),
+	('SP'),
+	('MG'),
+	('RJ'),
+	('RS');
 
-    INSERT INTO CIDADE (id_estado, nome) VALUES
-    (1, 'Serra'),
-    (1, 'Vitória'),
-    (1, 'Vila Velha'),
-    (1, 'Domingos Martins'),
-    (1, 'São Mateus'),
-    (1, 'Muniz Freire'),
-    (2, 'São Paulo'),
-    (3, 'Belo Horizonte'),
-    (4, 'Rio de Janeiro'),
-    (5, 'Porto Alegre');
+	INSERT INTO CIDADE (id_estado, nome) VALUES
+	(1, 'Serra'),
+	(1, 'Vitória'),
+	(1, 'Vila Velha'),
+	(1, 'Domingos Martins'),
+	(1, 'São Mateus'),
+	(1, 'Muniz Freire'),
+	(2, 'São Paulo'),
+	(3, 'Belo Horizonte'),
+	(4, 'Rio de Janeiro'),
+	(5, 'Porto Alegre');
 
-    INSERT INTO USUARIO (id_cidade, nome, telefone, email, senha, cpf, bairro, numero, logradouro, desc_logradouro) VALUES
-    (1, 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 'Jardim Carapina', 197, 'Conceição do Castelo', 'Rua'),
-    (3, 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 'São Torquato', 191, 'Américo Buaiz', 'Avenida'),
-    (2, 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 'Maria Ortiz', 293, '24 de maio', 'Rua'),
-    (4, 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 'Arace', 912, 'Afrânio Peixoto', 'Avenida'),
-    (5, 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 'Vintem', 561, ' das Espatodias', 'Alameda'),
-    (6, 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 'Menino Jesus', 831, 'Fernando Ferrari', 'Avenida'),
-    (7, 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 'Água Rasa', 341, '9 de Julho', 'Avenida'),
-    (8, 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 'Buritis', 455, 'Olegario Maciel', 'Avenida'),
-    (9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 'Botafogo', 555, 'Alvaro Chaves', 'Rua'),
-    (10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 'Aberta dos Morros', 980, 'Lopo Gonçalves', 'Rua');
+	INSERT INTO BAIRRO (id_cidade, nome) VALUES
+	(1, 'Jardim Carapina'),
+	(3, 'São Torquato'),
+	(2, 'Maria Ortiz'),
+	(4, 'Arace'),
+	(5, 'Vintem'),
+	(6, 'Menino Jesus'),
+	(7, 'Água Rasa'),
+	(8, 'Buritis'),
+	(9, 'Botafogo'),
+	(10, 'Aberta dos Morros');
 
-    INSERT INTO CASA_ADOCAO (id_cidade, email, senha, nome, bairro, numero, desc_logradouro, logradouro) VALUES
-    (3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 'America', 167, 'Laranjeiras', 'Avenida'),
-    (1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 'Bento Ferreira', 342, 'Amenófis de Assis', 'Rua'),
-    (7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 'Alvorada', 121, 'Netuno', 'Rua'),
-    (5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 'Água Rasa', 301, 'Três Rios', 'Rua'),
-    (10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 'Sé Bela Vista', 296, 'Galvão Bueno', 'Rua'),
-    (4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 'Buritis', 62, 'Olegário Maciel', 'Avenida'),
-    (9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 'Botafogo', 347, 'Álvaro Chaves', 'Rua'),
-    (6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 'Barra da Tijuca', 100, 'Seu Madruga', 'Avenida'),
-    (8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 'Aberta dos Morros', 766, 'Lupo Gonçalves', 'Rua'),
-    (2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 'Ibatiba', 543, 'Hebreus lapide', 'Avenida');
+	INSERT INTO USUARIO (id_bairro, nome, telefone, email, senha, cpf, numero, logradouro, desc_logradouro) VALUES
+	(1, 'Eduardo', 27994321, 'duduzinhodoserrao@email.com', 'dudu921', 11111, 197, 'Conceição do Castelo', 'Rua'),
+	(2, 'Thiago', 27998029, 'thithisabetudo@email.com', 'rbdforever', 22222, 191, 'Américo Buaiz', 'Avenida'),
+	(3, 'Renato', 27980251, 'renatinlanches@email.com', 'merendagratis', 55555, 293, '24 de maio', 'Rua'),
+	(4, 'Wildemberg', 27995328, 'evoluwildejesus@email.com', 'evoluiudemais', 88888, 912, 'Afrânio Peixoto', 'Avenida'),
+	(5, 'Patricia', 27993426, 'patricinhadointerior@email.com', 'dinheiro982', 77777, 561, ' das Espatodias', 'Alameda'),
+	(6, 'Ana', 28990298, 'aninhagameplays@email.com', 'gameboy17', 99999, 831, 'Fernando Ferrari', 'Avenida'),
+	(7, 'Bruna', 11989325, 'brunadalapa@email.com', 'neymarzete02', 66666, 341, '9 de Julho', 'Avenida'),
+	(8, 'Fernanda', 31992435, 'fefe22silveira@email.com', 'fernandinhatop21', 33333, 455, 'Olegario Maciel', 'Avenida'),
+	(9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 555, 'Alvaro Chaves', 'Rua'),
+	(10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 980, 'Lopo Gonçalves', 'Rua');
 
-    INSERT INTO TIPO (id, descricao) VALUES
-    (1, 'Cachorro'),
-    (2, 'Gato'),
-    (3, 'Pássaro'),
-    (4, 'Peixe'),
-    (5, 'Jabuti'),
-    (6, 'Porquinho-da-Índia'),
-    (7, 'Cobra'),
-    (8, 'Coelho');
+	INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, numero, desc_logradouro, logradouro) VALUES
+	(3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 167, 'Laranjeiras', 'Avenida'),
+	(1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 342, 'Amenófis de Assis', 'Rua'),
+	(7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 121, 'Netuno', 'Rua'),
+	(5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 301, 'Três Rios', 'Rua'),
+	(10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 296, 'Galvão Bueno', 'Rua'),
+	(4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 62, 'Olegário Maciel', 'Avenida'),
+	(9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 347, 'Álvaro Chaves', 'Rua'),
+	(6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 100, 'Seu Madruga', 'Avenida'),
+	(8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 766, 'Lupo Gonçalves', 'Rua'),
+	(2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 543, 'Hebreus lapide', 'Avenida');
 
-    INSERT INTO RACA (id, nome) VALUES
-    (1, 'Pinscher'),
-    (2, 'Canário'),
-    (3, 'Persa'),
-    (4, 'Piranga'),
-    (5, 'Yorkshire'),
-    (6, 'Rex'),
-    (7, 'Pelo Curto Inglês'),
-    (8, 'Milho'),
-    (9, 'Anão Holandês'),
-    (10, 'Dogue Alemão'),
-    (11, 'Palhaço');
+	INSERT INTO TIPO (id, descricao) VALUES
+	(1, 'Cachorro'),
+	(2, 'Gato'),
+	(3, 'Pássaro'),
+	(4, 'Peixe'),
+	(5, 'Jabuti'),
+	(6, 'Porquinho-da-Índia'),
+	(7, 'Cobra'),
+	(8, 'Coelho');
 
-    INSERT INTO ANIMAL (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
-    (1, 1, '2020-11-22', 'Zequinha', 1),
-    (2, 3, '2020-09-28', 'Piu-piu', 2),
-    (3, 2, '2018-12-13', 'Garfield', 3),
-    (11, 4, '2020-06-07', 'Marlin', 3),
-    (4, 5, '2014-09-22', 'Oogway', 5),
-    (5, 1, '2017-03-17', 'Snoopy', 9),
-    (6, 6, '2019-10-12', 'Malaquias', 1),
-    (7, 2, '2016-04-02', 'Tea-Lord', 8),
-    (8, 7, '2018-05-29', 'Python', 6),
-    (9, 8, '2015-11-16', 'Pernalonga', 2),
-    (10, 1, '2012-02-19', 'Scooby-Doo', 5);
+	INSERT INTO RACA (id, nome) VALUES
+	(1, 'Pinscher'),
+	(2, 'Canário'),
+	(3, 'Persa'),
+	(4, 'Piranga'),
+	(5, 'Yorkshire'),
+	(6, 'Rex'),
+	(7, 'Pelo Curto Inglês'),
+	(8, 'Milho'),
+	(9, 'Anão Holandês'),
+	(10, 'Dogue Alemão'),
+	(11, 'Palhaço');
 
-    INSERT INTO STATUS (id, descricao) VALUES
-    (1, 'Pendente'),
-    (2, 'Recusado'),
-    (3, 'Aceito');
+	INSERT INTO ANIMAL (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
+	(1, 1, '2020-11-22', 'Zequinha', 1),
+	(2, 3, '2020-09-28', 'Piu-piu', 2),
+	(3, 2, '2018-12-13', 'Garfield', 3),
+	(11, 4, '2020-06-07', 'Marlin', 3),
+	(4, 5, '2014-09-22', 'Oogway', 5),
+	(5, 1, '2017-03-17', 'Snoopy', 9),
+	(6, 6, '2019-10-12', 'Malaquias', 1),
+	(7, 2, '2016-04-02', 'Tea-Lord', 8),
+	(8, 7, '2018-05-29', 'Python', 6),
+	(9, 8, '2015-11-16', 'Pernalonga', 2),
+	(10, 1, '2012-02-19', 'Scooby-Doo', 5);
 
-    INSERT INTO PEDIDO_ADOCAO (mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
-    ('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 5, 4, 3),
-    ('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 1, 2),
-    ('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 9, 10),
-    ('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 7, 4),
-    ('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 2, 4),
-    ('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 10, 9),
-    ('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 3, 5),
-    ('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
-    ('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
-    ('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
+	INSERT INTO STATUS (id, descricao) VALUES
+	(1, 'Pendente'),
+	(2, 'Recusado'),
+	(3, 'Aceito');
 
+	INSERT INTO PEDIDO_ADOCAO (mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
+	('Olá, Gostaria de adotar o Garfield.', 1, '2021-02-08', null, 5, 4, 3),
+	('Olá, Gostaria de adotar o Piu-piu', 1, '2021-02-07', null, 2, 1, 2),
+	('Olá, Gostaria de adotar o Pernalonga', 3, '2017-02-16', '2017-02-23', 8, 9, 10),
+	('Olá, Gostaria de adotar o Marlin', 2, '2020-09-10', '2020-09-11', 9, 7, 4),
+	('Olá, Gostaria de adotar o Marlin', 3, '2020-10-01', '2020-10-03', 1, 2, 4),
+	('Olá, Gostaria de adotar o Python', 2, '2019-04-03', '2019-04-06', 3, 10, 9),
+	('Olá, Gostaria de adotar o Oogway', 1, '2020-12-25', null, 7, 3, 5),
+	('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
+	('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
+	('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
+	commit;
 
 
 
