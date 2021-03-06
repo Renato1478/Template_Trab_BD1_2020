@@ -70,7 +70,7 @@ Pedidos feito por um usuário
 #### 4.3 TABELA DE DADOS DO SISTEMA:
 
     
-![Exemplo de Tabela de dados do sistema AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/item_4.3_tabela.xlsx?raw=true "Tabela - AchaPatas")
+![Exemplo de Tabela de dados do sistema AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/arquivos/item_4.3_tabela.xlsx?raw=true "Tabela - AchaPatas")
     
     
 ### 5.MODELO CONCEITUAL<br>       
@@ -277,6 +277,9 @@ Pedidos feito por um usuário
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
+
+![Arquivo SQL de recuperação com drop + create + inserts das tabelas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/arquivos/inserts.sql?raw=true "Tabela - AchaPatas")
+
 	   DROP table if exists pedido_adocao;
 	   DROP table if exists status;
 	   DROP table if exists animal;
@@ -513,8 +516,6 @@ Pedidos feito por um usuário
 	('Olá, Gostaria de adotar o Garfield', 1, '2021-02-08', null, 6, 8, 3),
 	('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
 	('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
-
-link para arquivo em SQL: https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/inserts.sql?raw=true
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
