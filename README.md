@@ -385,7 +385,7 @@ Pedidos feito por um usuário
 	('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
 	('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
 
-
+link para arquivo em SQL: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZFh8Zr5c4X#scrollTo=daOmwH-OHToF
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
