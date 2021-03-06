@@ -385,7 +385,7 @@ Pedidos feito por um usuário
 	('Olá, Gostaria de adotar o Malaquias', 3, '2019-12-02', '2019-12-02', 10, 5, 7),
 	('Olá, Gostaria de adotar o Pernalonga', 2, '2020-10-10', '2020-11-01', 4, 6, 10);
 
-link para arquivo em SQL: https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/inserts.sql
+link para arquivo em SQL: https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/inserts.sql?raw=true
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
