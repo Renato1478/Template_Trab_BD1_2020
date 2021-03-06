@@ -277,7 +277,136 @@ Pedidos feito por um usuário
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-	INSERT INTO ESTADO (nome) VALUES
+	   DROP table if exists pedido_adocao;
+	   DROP table if exists status;
+	   DROP table if exists animal;
+	   DROP table if exists tipo;
+	   DROP table if exists raca;
+	   DROP table if exists usuario;
+	   DROP table if exists casa_adocao;
+	   DROP table if exists bairro;
+	   DROP table if exists cidade;
+	   DROP table if exists estado;
+
+	   CREATE TABLE USUARIO 
+	   (
+	    id serial,
+	    id_bairro int,
+	    nome varchar(100),
+	    telefone int,
+	    email varchar(100),
+	    senha varchar(25),
+	    cpf int,
+	    numero int,
+	    logradouro varchar(100),
+	    desc_logradouro varchar(100),
+	    primary key(id)
+	  );
+
+	  CREATE TABLE ESTADO
+	  (
+	   id serial,
+	   nome char(2),
+	   primary key(id)
+	  );
+
+	  CREATE TABLE CIDADE
+	  (
+	   id serial,
+	   id_estado int,
+	   nome varchar(100),
+	   primary key(id),
+	   foreign key(id_estado) references estado(id)
+	  );
+
+	  CREATE TABLE BAIRRO
+	  (
+	   id serial,
+	   id_cidade int,
+	   nome varchar(45),
+	   primary key(id),
+	   foreign key(id_cidade) references cidade(id)
+	  );
+	  alter table usuario add constraint fk_id_bairro foreign key(id_bairro) references bairro(id);
+
+	  CREATE TABLE CASA_ADOCAO(
+	   id serial,
+	   id_bairro int,
+	   email varchar(100),
+	   senha varchar(25),
+	   nome varchar(100),
+	   numero int,
+	   logradouro varchar(100),
+	   desc_logradouro varchar(100),
+	   primary key(id),
+	   foreign key(id_bairro) references bairro(id)
+	  );
+
+	  CREATE TABLE RACA
+	  (
+	   id int,
+	   nome varchar(100),
+	   primary key(id)
+	  );
+
+	  CREATE TABLE TIPO
+	  (
+	   id int,
+	   descricao varchar(25),
+	   primary key(id)
+	  );
+
+	  CREATE TABLE STATUS
+	  (
+	   id int,
+	   descricao varchar(10),
+	   primary key(id)
+	  );
+
+	  CREATE TABLE ANIMAL(
+	   id serial,
+	   nome varchar(100),
+	   data_nascimento date,
+	   id_casa_adocao int,
+	   id_raca int,
+	   id_tipo int,
+	   CONSTRAINT fk_id_casa_adocao
+	   FOREIGN KEY(id_casa_adocao) 
+	   REFERENCES CASA_ADOCAO(id),
+	   CONSTRAINT fk_id_raca
+	   FOREIGN KEY(id_raca) 
+	   REFERENCES RACA(id),
+	   CONSTRAINT fk_id_tipo
+	   FOREIGN KEY(id_tipo) 
+	   REFERENCES TIPO(id),
+	   primary key(id)
+	  );
+
+	  CREATE TABLE PEDIDO_ADOCAO(
+	   id serial,
+	   mensagem varchar(255),
+	   data_solicitacao date,
+	   data_conclusao date,
+	   id_status int,
+	   id_usuario int,
+	   id_casa_adocao int,
+	   id_animal int,
+	   PRIMARY KEY (id),
+	   CONSTRAINT fk_pedido_usuario
+	   FOREIGN KEY(id_usuario) 
+	   REFERENCES USUARIO(id),
+	   CONSTRAINT fk_pedido_casa_adocao
+	   FOREIGN KEY(id_casa_adocao)
+	   REFERENCES CASA_ADOCAO(id),
+	   CONSTRAINT fk_pedido_animal
+	   FOREIGN KEY(id_animal)
+	   REFERENCES ANIMAL(id),
+	   CONSTRAINT fk_status
+	   FOREIGN KEY(id_status)
+	   REFERENCES STATUS(id)
+	  );
+
+	  INSERT INTO ESTADO (nome) VALUES
 	('ES'),
 	('SP'),
 	('MG'),
