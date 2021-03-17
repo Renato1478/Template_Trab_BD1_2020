@@ -200,6 +200,7 @@ Pedidos feito por um usuário
        email varchar(100),
        senha varchar(25),
        nome varchar(100),
+	   telefone int,
        numero int,
        logradouro varchar(100),
        desc_logradouro varchar(100),
