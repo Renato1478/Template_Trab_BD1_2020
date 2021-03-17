@@ -74,7 +74,7 @@ Pedidos feito por um usuário
     
     
 ### 5.MODELO CONCEITUAL<br>       
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/mapa_conceitual.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/mapa_conceitual_corrigido.png?raw=true "Modelo Conceitual")
     
     
         
@@ -150,7 +150,7 @@ Pedidos feito por um usuário
 
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/modelo_logico.png?raw=true "Modelo Lógico")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/mapa_logico.png?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
        CREATE TABLE USUARIO 
