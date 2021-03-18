@@ -539,7 +539,9 @@ SELECT * FROM ANIMAL;
 
 SELECT * FROM CASA_ADOCAO;
 
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CASA_ADOCAO.png?raw=true "Select casa_adocao")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CASA1.png?raw=true "Select casa_adocao1")
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELECT_CASA2.png?raw=true "Select casa_adocao2")
 
 SELECT * FROM CIDADE;
 
