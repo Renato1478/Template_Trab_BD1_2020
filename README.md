@@ -454,17 +454,17 @@ Pedidos feito por um usuário
 	(9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 555, 'Alvaro Chaves', 'Rua'),
 	(10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 980, 'Lopo Gonçalves', 'Rua');
 
-	INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, numero, logradouro, desc_logradouro) VALUES
-	(3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 167, 'Laranjeiras', 'Avenida'),
-	(1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 342, 'Amenófis de Assis', 'Rua'),
-	(7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 121, 'Netuno', 'Rua'),
-	(5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 301, 'Três Rios', 'Rua'),
-	(10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 296, 'Galvão Bueno', 'Rua'),
-	(4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 62, 'Olegário Maciel', 'Avenida'),
-	(9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 347, 'Álvaro Chaves', 'Rua'),
-	(6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 100, 'Seu Madruga', 'Avenida'),
-	(8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 766, 'Lupo Gonçalves', 'Rua'),
-	(2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 543, 'Hebreus lapide', 'Avenida');
+	INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, telefone, numero, logradouro, desc_logradouro) VALUES
+	(3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 27925142, 167, 'Laranjeiras', 'Avenida'),
+	(1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 27982012, 342, 'Amenófis de Assis', 'Rua'),
+	(7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 11923021, 121, 'Netuno', 'Rua'),
+	(5, 'geretrizpet234@email.com', 'gegepet19', 'Geretriz', 28902912, 301, 'Três Rios', 'Rua'),
+	(10, 'cadabrapet@email.com', 'Alakapet1', 'AbraCadabra', 51928319, 296, 'Galvão Bueno', 'Rua'),
+	(4, 'petrural97@email.com', 'Queijominas', 'Pet Rural', 28938219, 62, 'Olegário Maciel', 'Avenida'),
+	(9, 'parisadocao@email.com', 'Torrepets90', 'La Paris', 21928321, 347, 'Álvaro Chaves', 'Rua'),
+	(6, 'kinoplexcasa@email.com', 'Casadospetsrj171', 'Kinoplex Pets', 28983742, 100, 'Seu Madruga', 'Avenida'),
+	(8, 'chimarraodospets@email.com', 'ervamate97', 'Chimarrao dos Pets', 31992039, 766, 'Lupo Gonçalves', 'Rua'),
+	(2, 'juscelinodospets@email.com', 'pentefino', 'Casa do Juju', 27990290, 543, 'Hebreus lapide', 'Avenida');
 
 	INSERT INTO TIPO (id, descricao) VALUES
 	(1, 'Cachorro'),
