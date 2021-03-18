@@ -200,7 +200,7 @@ Pedidos feito por um usuário
        email varchar(100),
        senha varchar(25),
        nome varchar(100),
-	   telefone int,
+       telefone int,
        numero int,
        logradouro varchar(100),
        desc_logradouro varchar(100),
@@ -339,6 +339,7 @@ Pedidos feito por um usuário
 	   email varchar(100),
 	   senha varchar(25),
 	   nome varchar(100),
+	   telefone int,
 	   numero int,
 	   logradouro varchar(100),
 	   desc_logradouro varchar(100),
@@ -453,7 +454,7 @@ Pedidos feito por um usuário
 	(9, 'José', 21992430, 'zezedosertao@email.com', 'zezeelulu', 44444, 555, 'Alvaro Chaves', 'Rua'),
 	(10, 'Leonardo', 55992142, 'tartaruganinja12@email.com', 'splinter72', 00000, 980, 'Lopo Gonçalves', 'Rua');
 
-	INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, numero, desc_logradouro, logradouro) VALUES
+	INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, numero, logradouro, desc_logradouro) VALUES
 	(3, 'petfelizao@email.com', 'm3ad0ta', 'Pet Feliz', 167, 'Laranjeiras', 'Avenida'),
 	(1, 'prondogadocao@email.com', 'An1m4l', 'PronDog', 342, 'Amenófis de Assis', 'Rua'),
 	(7, 'casalvorada@email.com', 'casalvoradapet12', 'Casa Alvorada', 121, 'Netuno', 'Rua'),
