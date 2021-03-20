@@ -831,8 +831,6 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 <br>
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
 	
 	SELECT * FROM (
 		SELECT desc_logradouro,count(desc_logradouro) as qtd_desc_log FROM usuario GROUP BY desc_logradouro
