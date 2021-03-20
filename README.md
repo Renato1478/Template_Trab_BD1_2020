@@ -674,10 +674,48 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
+    SELECT desc_logradouro,count(desc_logradouro) as qtd_desc_log FROM usuario GROUP BY desc_logradouro;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby1.png?raw=true "Title")
+
+	SELECT id_tipo as tipo_animal,count(id_tipo) as qtd_tipo, tipo.descricao FROM animal inner join tipo on(animal.id_tipo=tipo.id) GROUP BY id_tipo,descricao;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby2.png?raw=true "Title")
+
+	SELECT pa.id_animal as id_animal_pedido,count(pa.id_animal) as qtd_pedido, ani.nome as nome_animal FROM pedido_adocao as pa RIGHT OUTER JOIN animal as ani on(pa.id_animal=ani.id) GROUP BY ani.nome,pa.id_animal;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby3.png?raw=true "Title")
+
+	SELECT est.nome as nome_est,count(cid.id_estado) as qtd_cid_est FROM cidade as cid INNER JOIN estado as est on(cid.id_estado=est.id) GROUP BY est.nome;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby4.png?raw=true "Title")
+
+	SELECT status.descricao,count(pa.id_status) as qtd_status FROM status INNER JOIN pedido_adocao as pa on(status.id=pa.id_status) GROUP BY status.descricao;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby5.png?raw=true "Title")
+
+	SELECT count(data_nascimento) as qtd_animais, id_tipo as tipo_animal FROM animal WHERE data_nascimento < '2019-06-08' GROUP BY id_tipo;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby6.png?raw=true "Title")
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+   SELECT usua.nome, pa.data_conclusao as data_pedido_conclusao from usuario as usua LEFT OUTER JOIN pedido_adocao as pa on(usua.id=pa.id_usuario);
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_leftjoin.png?raw=true "Title")
+
+	SELECT pa.id_animal as id_animal_pedido_adocao, ani.id as id_animal, ani.nome from pedido_adocao as pa RIGHT OUTER JOIN animal as ani on(pa.id_animal=ani.id);
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_rightjoinparte1.png?raw=true "Title")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_rightjoinparte2.png?raw=true "Title")
+
+	SELECT * FROM pedido_adocao as pa FULL OUTER JOIN animal as ani on(pa.id_animal=ani.id);
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_fulljoin1parte1.png?raw=true "Title")
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_fulljoin1parte2.png?raw=true "Title")
+
+	SELECT bar.nome as nome_bairro, cid.nome as nome_cidade FROM bairro as bar FULL OUTER JOIN cidade as cid on(bar.id_cidade=cid.id);
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_fulljoin2.png?raw=true "Title")
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
 
