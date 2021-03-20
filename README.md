@@ -833,6 +833,42 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
+	
+	SELECT * FROM (
+		SELECT desc_logradouro,count(desc_logradouro) as qtd_desc_log FROM usuario GROUP BY desc_logradouro
+	) as sub
+	WHERE sub.qtd_desc_log > 1
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.10/01.JPG?raw=true "Title")<br>
+
+	SELECT sub.nome as animal, sub.adotante, sub.descricao as status FROM (
+		SELECT animal.nome, casa_adocao.nome as nome_casa, usuario.nome as adotante, status.descricao, pedido_adocao.id as pedido 
+		FROM animal 
+		INNER JOIN casa_adocao ON casa_adocao.id = animal.id_casa_adocao 
+		INNER JOIN pedido_adocao ON pedido_adocao.id_animal = animal.id 
+		INNER JOIN status ON status.id = pedido_adocao.id_status 
+		INNER JOIN usuario ON usuario.id = pedido_adocao.id_usuario 
+		ORDER BY animal.nome ASC
+	) as sub
+	WHERE sub.descricao like 'Aceito'
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.10/02.JPG?raw=true "Title")<br>
+
+	SELECT sub.animal, sub.qtd_pedidos FROM (
+		SELECT count(id_animal) as qtd_pedidos, animal.nome as animal FROM pedido_adocao
+		INNER JOIN animal ON animal.id = pedido_adocao.id_animal
+		GROUP BY animal.nome
+	) as sub
+	WHERE sub.qtd_pedidos > 1
+	
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.10/03.JPG?raw=true "Title")<br>
+
+	SELECT sub.nome FROM (
+		SELECT * FROM bairro
+	) as sub
+	WHERE sub.nome ilike '%ra%'
+	
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.10/04.JPG?raw=true "Title")<br>
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
