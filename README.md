@@ -576,8 +576,56 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+	Consultas usando datas (NO NOSSO TRABALHO SÓ A DATAS DO TIPO ANO-MES-DIA, LOGO NÃO HÁ APLICAÇÃO PARA AS FUNÇÕES CURRENT_TIME E NOW()):
+
+    SELECT nome, current_date as data_atual, data_nascimento, date_part('year', age(current_date, data_nascimento)) as anos, date_part('month', age(current_date, data_nascimento)) as meses FROM animal;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_data.png?raw=true "Title")
+
+	SELECT current_date as data_atual, data_solicitacao, extract('month' from age(current_date, data_solicitacao)) as qtd_meses, extract('day' from age(current_date, data_solicitacao)) as qtd_dias  FROM pedido_adocao where data_conclusao is null;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_data2.png?raw=true "Title")
+
+	SELECT date_part('year', data_conclusao) as ano_conclusao_pedido, count(id) FROM pedido_adocao WHERE data_conclusao is not null GROUP BY date_part('year', data_conclusao) ORDER BY date_part('year', data_conclusao) desc;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_data3.png?raw=true "Title")
+
+	Consultas usando operador like/ilike:
+
+	SELECT * FROM usuario where nome ilike '%n%';
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like.png?raw=true "Title")
+
+	SELECT * FROM usuario where nome ilike '%a%' and desc_logradouro = 'Rua';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like2.png?raw=true "Title")
+
+	SELECT nome,email,senha FROM casa_adocao where senha ilike '%o%';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like3.png?raw=true "Title")
+
+	SELECT bar.nome as nome_bairro, cid.nome as nome_cidade FROM bairro as bar join cidade as cid on(bar.id_cidade=cid.id) where bar.nome ilike '%e%';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like4.png?raw=true "Title")
+
+	SELECT cid.nome as nome_cidade, est.nome as uf_estado FROM cidade as cid join estado as est on(cid.id_estado=est.id) where cid.nome ilike '%m%';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like5.png?raw=true "Title")
+
+	SELECT nome FROM animal WHERE nome ilike '%n%';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like6.png?raw=true "Title")
+
+	SELECT * FROM tipo WHERE descricao ilike 'p%';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like7.png?raw=true "Title")
+
+	SELECT * FROM raca WHERE nome like '%a';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like8.png?raw=true "Title")
+
+	SELECT * FROM casa_adocao WHERE email like 'p%';
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like9.png?raw=true "Title")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 
