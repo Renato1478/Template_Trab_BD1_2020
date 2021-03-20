@@ -533,57 +533,57 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 	SELECT * FROM ANIMAL WHERE id > 5 AND data_nascimento > '2016-12-01';
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/AND.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM ANIMAL WHERE id = 4 OR nome ILIKE '%oo%';
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/OR.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM PEDIDO_ADOCAO WHERE data_conclusao IS NOT NULL;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/NOT.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM PEDIDO_ADOCAO WHERE data_conclusao IS NOT NULL AND data_solicitacao > '2019-12-19';
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/NOT_AND.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM ANIMAL WHERE (id > 5 OR nome ILIKE 'P%') AND data_nascimento NOT IN (SELECT data_nascimento FROM ANIMAL WHERE data_nascimento > '2017-03-12' AND data_nascimento < '2019-11-29');
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/AND_NOT_OR.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM USUARIO WHERE numero%2 = 0;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/DIV.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM USUARIO WHERE numero > (SELECT MIN(numero)+100 FROM USUARIO) AND numero < (SELECT MAX(numero)-100 FROM USUARIO);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/MAIS_MENOS.png?raw=true "Title")
-
+<br>
 
 	SELECT * FROM USUARIO WHERE cpf*2 IN (SELECT cpf FROM USUARIO);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/MULTIPLICA%C3%87%C3%83O.png?raw=true "Title")
-
+<br>
 
 	SELECT id AS ID_usuario, nome AS Cliente, senha AS Senha_cliente FROM USUARIO;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/CAMPO.png?raw=true "Title")
-
+<br>
 
 	SELECT id AS ID_usuario, nome AS Cliente, email AS Endereço_email FROM USUARIO AS Cliente;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/CAMPO_TABELA.png?raw=true "Title")
-
+<br>
 
 	SELECT id AS ID_status, descricao AS Situação_status FROM STATUS AS Status_usuario WHERE id <> 2;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/CAMPO_TABELA2.png?raw=true "Title")
-
+<br>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
@@ -594,32 +594,32 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 	DELETE FROM PEDIDO_ADOCAO WHERE id = 10;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/DELETE1.png?raw=true "Title")
-
+<br>
 
 	DELETE FROM PEDIDO_ADOCAO WHERE id > 8;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/DELETE2.png?raw=true "Title")
-
+<br>
 
 	DELETE FROM PEDIDO_ADOCAO WHERE id = 8;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/DELETE3.png?raw=true "Title")
-
+<br>
 
 	UPDATE ANIMAL SET data_nascimento = '2019-12-10' WHERE id = 2;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/UPDATE1.png?raw=true "Title")
-
+<br>
 
 	UPDATE CASA_ADOCAO SET email = 'casapetfeliz@email.com' WHERE id = 1;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/UPDATE2.png?raw=true "Title")
-
+<br>
 
 	UPDATE USUARIO SET telefone = 279525191 WHERE id = 1;
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/UPDATE3.png?raw=true "Title")
-
+<br>
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
@@ -638,32 +638,32 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 	CREATE VIEW Dados_status AS SELECT PEDIDO_ADOCAO.id AS id_pedido, PEDIDO_ADOCAO.mensagem, STATUS.descricao, ANIMAL.nome AS nome_animal FROM PEDIDO_ADOCAO INNER JOIN STATUS ON (PEDIDO_ADOCAO.id_status = STATUS.id) INNER JOIN ANIMAL ON (ANIMAL.id = PEDIDO_ADOCAO.id_animal);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELF_JOIN.png?raw=true "Title")
-
+<br>
 
 	CREATE VIEW dados_endereco AS SELECT BAIRRO.nome AS nome_bairro, CIDADE.nome AS nome_cidade, ESTADO.nome AS nome_estado FROM BAIRRO INNER JOIN CIDADE ON (CIDADE.id = BAIRRO.id_cidade) INNER JOIN ESTADO ON (ESTADO.id = CIDADE.id_estado);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELF_JOIN2.png?raw=true "Title")
-
+<br>
 
 	CREATE VIEW Dados_usuario AS (SELECT nome, telefone, email FROM USUARIO);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/VIEW1.png?raw=true "Title")
-
+<br>
 
 	CREATE VIEW Dados_casa AS (SELECT nome, email, desc_logradouro, logradouro FROM CASA_ADOCAO);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/VIEW2.png?raw=true "Title")
-
+<br>
 
 	CREATE VIEW Dados_animal AS (SELECT ANIMAL.nome AS Nome_animal, ANIMAL.data_nascimento, CASA_ADOCAO.nome AS Nome_casa_adocao FROM ANIMAL INNER JOIN CASA_ADOCAO ON (ANIMAL.id_casa_adocao = CASA_ADOCAO.id));
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/VIEW3.png?raw=true "Title")
-
+<br>
 
 	CREATE VIEW Dados_pedido AS (SELECT PEDIDO_ADOCAO.mensagem, PEDIDO_ADOCAO.data_solicitacao, PEDIDO_ADOCAO.data_conclusao, CASA_ADOCAO.nome AS nome_casa_adocao, USUARIO.nome AS nome_usuario FROM PEDIDO_ADOCAO INNER JOIN USUARIO ON (PEDIDO_ADOCAO.id_usuario = USUARIO.id) INNER JOIN CASA_ADOCAO ON (PEDIDO_ADOCAO.id_casa_adocao = CASA_ADOCAO.id));
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/VIEW4.png?raw=true "Title")
-
+<br>
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
