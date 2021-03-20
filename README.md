@@ -617,6 +617,8 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
 
+	NOSSAS TABELAS DO NOSSO BANCO DE DADOS NÃO POSSUI NENHUM RELACIONAMENTO DE UMA TABELA COM ELA MESMA. POR ISSO NO EXERCÍCIO DE SELF JOIN FOI UTILIZADO A CRIAÇÃO DE VIEWS.
+
 	CREATE VIEW Dados_status AS SELECT PEDIDO_ADOCAO.id AS id_pedido, PEDIDO_ADOCAO.mensagem, STATUS.descricao, ANIMAL.nome AS nome_animal FROM PEDIDO_ADOCAO INNER JOIN STATUS ON (PEDIDO_ADOCAO.id_status = STATUS.id) INNER JOIN ANIMAL ON (ANIMAL.id = PEDIDO_ADOCAO.id_animal);
 
 ![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/SELF_JOIN.png?raw=true "Title")
