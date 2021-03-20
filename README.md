@@ -523,7 +523,7 @@ Pedidos feito por um usuário
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-link do colab(inclui todos os sub-tópicos desta seção 9): https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZFh8Zr5c4X#scrollTo=daOmwH-OHToF
+link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZFh8Zr5c4X#scrollTo=daOmwH-OHToF
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
