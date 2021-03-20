@@ -528,6 +528,28 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+
+	SELECT * FROM animal WHERE id_raca = 1;
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.2/01.JPG?raw=true "Title")
+<br>
+
+	SELECT * FROM animal WHERE id_tipo = 1 AND id_casa_adocao = 9
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.2/02.JPG?raw=true "Title")
+<br>
+
+	SELECT * FROM animal WHERE data_nascimento > '2016-03-17'
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.2/03.JPG?raw=true "Title")
+<br>
+
+	SELECT * FROM animal WHERE nome like '%qui%'
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.2/04.JPG?raw=true "Title")
+<br>
+
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
 
 	SELECT * FROM ANIMAL WHERE id > 5 AND data_nascimento > '2016-12-01';
@@ -670,8 +692,65 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 <br>
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+
+	SELECT animal.nome, raca.nome as raca, tipo.descricao as tipo, casa_adocao.nome as nome_casa pedido_adocao.id as pedido,status.descricao, usuario.nome as adotante, bairro.nome as bairro_adotante, cidade.nome as cidade 
+	FROM animal 
+	INNER JOIN raca ON raca.id = animal.id_raca 
+	INNER JOIN tipo ON tipo.id = animal.id_tipo 
+	INNER JOIN casa_adocao ON casa_adocao.id = animal.id_casa_adocao 
+	INNER JOIN pedido_adocao ON pedido_adocao.id_animal = animal.id 
+	INNER JOIN status ON status.id = pedido_adocao.id_status 
+	INNER JOIN usuario ON usuario.id = pedido_adocao.id_usuario 
+	INNER JOIN bairro ON bairro.id = usuario.id_bairro 
+	INNER JOIN cidade ON cidade.id = bairro.id_cidade 
+	INNER JOIN estado ON estado.id = cidade.id_estado 
+	ORDER BY animal.nome ASC
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.6/01.JPG?raw=true "Title")
+<br>
+
+	SELECT animal.nome, casa_adocao.nome as nome_casa, usuario.nome as adotante, status.descricao, pedido_adocao.id as pedido 
+	FROM animal 
+	INNER JOIN casa_adocao ON casa_adocao.id = animal.id_casa_adocao 
+	INNER JOIN pedido_adocao ON pedido_adocao.id_animal = animal.id 
+	INNER JOIN status ON status.id = pedido_adocao.id_status 
+	INNER JOIN usuario ON usuario.id = pedido_adocao.id_usuario 
+	ORDER BY animal.nome ASC
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.6/02.JPG?raw=true "Title")
+<br>
+
+	SELECT animal.nome, raca.nome as raca, tipo.descricao as tipo 
+	FROM animal 
+	INNER JOIN raca ON raca.id = animal.id_raca 
+	INNER JOIN tipo ON tipo.id = animal.id_tipo 
+	ORDER BY animal.nome ASC
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.6/03.JPG?raw=true "Title")
+<br>
+
+	SELECT usuario.nome as usuario, bairro.nome as bairro, cidade.nome as cidade, estado.nome as estado FROM usuario
+	INNER JOIN bairro ON bairro.id = usuario.id_bairro
+	INNER JOIN cidade ON cidade.id = bairro.id_cidade
+	INNER JOIN estado ON estado.id = cidade.id_estado
+	ORDER BY estado.nome, cidade.nome, bairro.nome DESC
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.6/04.JPG?raw=true "Title")
+<br>
+
+	SELECT casa_adocao.nome as casa_adocao, animal.nome as animal FROM casa_adocao
+	INNER JOIN animal ON animal.id_casa_adocao = casa_adocao.id
+	ORDER BY casa_adocao.nome
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.6/05.JPG?raw=true "Title")
+<br>
+
+	SELECT pedido_adocao.id as pedido, usuario.nome as usuario FROM pedido_adocao
+	INNER JOIN usuario ON usuario.id = pedido_adocao.id_usuario
+	ORDER BY pedido_adocao.id 
+
+![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.6/06.JPG?raw=true "Title")
+<br>
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     SELECT desc_logradouro,count(desc_logradouro) as qtd_desc_log FROM usuario GROUP BY desc_logradouro;
