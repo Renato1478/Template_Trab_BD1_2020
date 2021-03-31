@@ -526,7 +526,7 @@ Pedidos feito por um usuário
 link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZFh8Zr5c4X#scrollTo=daOmwH-OHToF
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
-
+link do colab para os itens 9.2 ao 9.10: https://colab.research.google.com/drive/1YoVYd-lg0j3WwMA01alPnHR1arMIywwf?usp=sharing
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
 	SELECT * FROM animal WHERE id_raca = 1;
@@ -608,56 +608,6 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 <br>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-	Consultas usando datas (NO NOSSO TRABALHO SÓ A DATAS DO TIPO ANO-MES-DIA, LOGO NÃO HÁ APLICAÇÃO PARA AS FUNÇÕES CURRENT_TIME E NOW()):
-
-    SELECT nome, current_date as data_atual, data_nascimento, date_part('year', age(current_date, data_nascimento)) as anos, date_part('month', age(current_date, data_nascimento)) as meses FROM animal;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_data.png?raw=true "Title")
-
-	SELECT current_date as data_atual, data_solicitacao, extract('month' from age(current_date, data_solicitacao)) as qtd_meses, extract('day' from age(current_date, data_solicitacao)) as qtd_dias  FROM pedido_adocao where data_conclusao is null;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_data2.png?raw=true "Title")
-
-	SELECT date_part('year', data_conclusao) as ano_conclusao_pedido, count(id) FROM pedido_adocao WHERE data_conclusao is not null GROUP BY date_part('year', data_conclusao) ORDER BY date_part('year', data_conclusao) desc;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_data3.png?raw=true "Title")
-
-	Consultas usando operador like/ilike:
-
-	SELECT * FROM usuario where nome ilike '%n%';
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like.png?raw=true "Title")
-
-	SELECT * FROM usuario where nome ilike '%a%' and desc_logradouro = 'Rua';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like2.png?raw=true "Title")
-
-	SELECT nome,email,senha FROM casa_adocao where senha ilike '%o%';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like3.png?raw=true "Title")
-
-	SELECT bar.nome as nome_bairro, cid.nome as nome_cidade FROM bairro as bar join cidade as cid on(bar.id_cidade=cid.id) where bar.nome ilike '%e%';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like4.png?raw=true "Title")
-
-	SELECT cid.nome as nome_cidade, est.nome as uf_estado FROM cidade as cid join estado as est on(cid.id_estado=est.id) where cid.nome ilike '%m%';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like5.png?raw=true "Title")
-
-	SELECT nome FROM animal WHERE nome ilike '%n%';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like6.png?raw=true "Title")
-
-	SELECT * FROM tipo WHERE descricao ilike 'p%';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like7.png?raw=true "Title")
-
-	SELECT * FROM raca WHERE nome like '%a';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like8.png?raw=true "Title")
-
-	SELECT * FROM casa_adocao WHERE email like 'p%';
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.4/imagem_like9.png?raw=true "Title")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 
@@ -753,49 +703,9 @@ link do colab: https://colab.research.google.com/drive/1q_oXa70RP1VA8llf1MLy4vZF
 <br>
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    SELECT desc_logradouro,count(desc_logradouro) as qtd_desc_log FROM usuario GROUP BY desc_logradouro;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby1.png?raw=true "Title")
-
-	SELECT id_tipo as tipo_animal,count(id_tipo) as qtd_tipo, tipo.descricao FROM animal inner join tipo on(animal.id_tipo=tipo.id) GROUP BY id_tipo,descricao;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby2.png?raw=true "Title")
-
-	SELECT pa.id_animal as id_animal_pedido,count(pa.id_animal) as qtd_pedido, ani.nome as nome_animal FROM pedido_adocao as pa RIGHT OUTER JOIN animal as ani on(pa.id_animal=ani.id) GROUP BY ani.nome,pa.id_animal;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby3.png?raw=true "Title")
-
-	SELECT est.nome as nome_est,count(cid.id_estado) as qtd_cid_est FROM cidade as cid INNER JOIN estado as est on(cid.id_estado=est.id) GROUP BY est.nome;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby4.png?raw=true "Title")
-
-	SELECT status.descricao,count(pa.id_status) as qtd_status FROM status INNER JOIN pedido_adocao as pa on(status.id=pa.id_status) GROUP BY status.descricao;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby5.png?raw=true "Title")
-
-	SELECT count(data_nascimento) as qtd_animais, id_tipo as tipo_animal FROM animal WHERE data_nascimento < '2019-06-08' GROUP BY id_tipo;
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.7/imagem_groupby6.png?raw=true "Title")
-
+    
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-   SELECT usua.nome, pa.data_conclusao as data_pedido_conclusao from usuario as usua LEFT OUTER JOIN pedido_adocao as pa on(usua.id=pa.id_usuario);
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_leftjoin.png?raw=true "Title")
-
-	SELECT pa.id_animal as id_animal_pedido_adocao, ani.id as id_animal, ani.nome from pedido_adocao as pa RIGHT OUTER JOIN animal as ani on(pa.id_animal=ani.id);
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_rightjoinparte1.png?raw=true "Title")
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_rightjoinparte2.png?raw=true "Title")
-
-	SELECT * FROM pedido_adocao as pa FULL OUTER JOIN animal as ani on(pa.id_animal=ani.id);
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_fulljoin1parte1.png?raw=true "Title")
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_fulljoin1parte2.png?raw=true "Title")
-
-	SELECT bar.nome as nome_bairro, cid.nome as nome_cidade FROM bairro as bar FULL OUTER JOIN cidade as cid on(bar.id_cidade=cid.id);
-
-![Alt text](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/images/9.8/imagem_fulljoin2.png?raw=true "Title")
-
+   
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
 
 	NOSSAS TABELAS DO NOSSO BANCO DE DADOS NÃO POSSUI NENHUM RELACIONAMENTO DE UMA TABELA COM ELA MESMA. POR ISSO NO EXERCÍCIO DE SELF JOIN FOI UTILIZADO A CRIAÇÃO DE VIEWS.
