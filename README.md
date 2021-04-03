@@ -59,11 +59,11 @@ Pedidos feito por um usuário
 ![Arquivo PDF do Protótipo Balsamiq feito para o sistema de adoção de animais - AchaPatas](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/Prot%C3%B3tipo%20-%20AchaPatas.pdf?raw=true "AchaPatas")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
 > O aplicativo AchaPatas precisa inicialmente dos seguintes relatórios:
-* Relatório que mostre o nome de cada casa de adoção e o número de animais cadastrados no sistema.
-* Relatório relativo aos os animais adotados e adotadores. O resultado deve conter o nome do usuario e nome do animal além da data em que o pedido de adoção foi concluído.
-* Relatório que mostre a quantidade de casas de adoção em cada cidade. O resultado deverá conter o nome da cidade e da casa de adoção.
-* Relatório que mostre todos os dados relativos a todos os animais cadastrados vinculados à uma casa de adocao. O resultado deverá conter o nome, tipo, raça, data de nascimento, já da casa de adoção deve ser mostrado nome e email. Os registros devem ser ordenados pelo nome do animal em ordem alfabética.   
-* Relatório que obtenha os dados de todos os pedidos e adoção e suas relações com animal e usuário. Será apresentado os dados relativos a todos os pedidos de adoção com os dados do usuário e animais.
+* Relatório que mostre o nome de cada casa de adoção e a quantidade de pedidos que cada casa no sistema possui.
+* Relatório relativo aos tipos de animais e sua demanda (número de pedidos) pelos usuários do sistema.
+* Relatório que mostre para cada linha obtida a UF (nome) do estado e a quantidade de usuários naquele estado.
+* Relatório que mostre a quantidade de pedidos de adoção por status. Serão apresentados os dados apenas as descrições dos status e a quantidade de pedidos com o mesmo.
+* Relatório que mostre a distribuição de pedidos entre todos os animais do sistema. As linhas resultantes devem conter todas as informações sobre o animal, além da quantidade de pedidos que existem relacionados ao mesmo.
 >> ##### Observações: <br>perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos).. 
  
  
