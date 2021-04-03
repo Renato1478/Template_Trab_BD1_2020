@@ -1,3 +1,38 @@
+INSERT INTO CASA_ADOCAO (id_bairro, email, senha, nome, telefone, numero, logradouro, desc_logradouro) VALUES
+(7, 'catdog@email.com', 'gachorro', 'CatDog Adocao', 11966523, 389, 'Areas', 'Rua'),
+(7, 'tocapetial@email.com', 'toctoc', 'Toca dos Pets', 11988450, 99, 'Água Santa', 'Rua'),
+(9, 'naovaisubirninguem@emial.com', 'boa06boa','Morro Canino', 21944720, 542, 'Lauro Sodré', 'Avenida'),
+(8, 'petmineiro@emial.com', 'petdequiejo', 'Pet Mineiro', 31999665, 758, 'Queijo Minas', 'Alameda'),
+(3, 'petvitorioso@email.com', 'v1t0riad0sp3ts', 'Vitoria Pets', 27966633, 234, 'Avenida', 'Vitória'),
+(3, 'patasamigas@email.com', 'patinha123', 'Patas Amigas', 27988001, 200, 'Avenida', 'Vitória'),
+(1, 'petcanelaverde@email.com', 'canelav3rd3', 'Canela Pet', 27990001, 130, 'Avenida', 'Carlos Lindenberg'),
+(7, 'aguabichos@email.com', 'aguap0t4vel', 'Casa Bichos', 27988882, 502, 'Alameda', 'dos Anjos'),
+(9, 'streetpets@email.com', 'criad4ru4', 'StreetPets', 21922234, 998, 'Rua', 'Carrocinha'),
+(2, 'adotafusas@email.com', 'focinho5000', 'Adota Fusas', 27984452, 432, 'Rua', 'Tabajara')
+
+INSERT INTO USUARIO (id_bairro, nome, telefone, email, senha, cpf, numero, logradouro, desc_logradouro) VALUES
+(5, 'Mariana', 27998856, 'marimaluca@email.com', 'crazy_mary', 12345, 556, 'das Espatodias', 'Alameda'),
+(4, 'Dolores', 27984523, 'dododasdores@email.com', 'kidor', 37621, 912, 'Afrânio Peixoto', 'Avenida'),
+(9, 'Luana', 21997231, 'lumaisana@email.com', 'mundodalua', 54284, 203, 'Assunção', 'Rua'),
+(7, 'Mário', 11958234, 'quemario@email.com', '4trasd0armar1o', 303021, 102, 'Hebe Camargo', 'Avenida'),
+(7, 'João', 11968322, 'joaoeopedefeijao@email.com', 'fifafu', 95462, 254, 'Pompeia', 'Avenida'),
+(9, 'Júnior', 21944775, 'juninhodorio@email.com', 'perdeumane', 45562, 632, 'Eduardo Guinle', 'Rua'),
+(7, 'Maria', 11942237, 'mariadasgracas@email.com', 'ch3iadegr4ca4', 12350, 254, 'Pompeia', 'Avenida'),
+(2, 'Larissa', 27998820, 'lalasisi@email.com', 'bbberuim', 99402, 192, 'Américo Buaiz', 'Avenida'),
+(10, 'Rafael', 55988875, 'tortuguitadoninjutsu@email.com', 'arman1nj4', 02034, 150, 'Werno Finkler', 'Rua'),
+(10, 'Jailson', 55986969, 'trabalhandoerelaxando@email.com', 'sucodelaranja', 32148, 302, 'Alcebíades Ribeiro', 'Rua')
+
+INSERT INTO animal (id_raca, id_tipo, data_nascimento, nome, id_casa_adocao) VALUES
+(6, 6, '2018-02-28', 'Zézinho', 6),
+(2, 3, '2016-12-30', 'Orlando', 18),
+(7, 2, '2017-05-05', 'Tom', 4),
+(9, 8, '2015-08-09', 'Baixinho', 3),
+(10, 1, '2014-09-27', 'Totó', 3),
+(8, 7, '2020-09-15', 'Pipoca', 20),
+(4, 5, '2005-01-02', 'Ipiranga', 20),
+(3, 2, '2017-10-24', 'Lasanha', 18),
+(11, 4, '2021-04-01', 'Nemo', 14)
+
 INSERT INTO pedido_adocao(mensagem, id_status, data_solicitacao, data_conclusao, id_usuario, id_casa_adocao, id_animal) VALUES
 ('Olá, gostaria de adotar o Totó', 1, '2020-02-03', null, 20, 3, 16),
 ('Olá, gostaria de adotar o Orlando', 2, '2021-01-01', '2021-02-20', 14, 18, 13),
