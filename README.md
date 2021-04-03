@@ -411,7 +411,7 @@ Pedidos feito por um usuário
 	   REFERENCES STATUS(id)
 	  );
 
-	  INSERT INTO ESTADO (nome) VALUES
+	INSERT INTO ESTADO (nome) VALUES
 	('ES'),
 	('SP'),
 	('MG'),
@@ -550,7 +550,8 @@ link do colab para os itens 9.2 ao 9.10: https://colab.research.google.com/drive
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-https://colab.research.google.com/drive/110YxqezUhvkwnELDaqlHONvEMqiHHKCx?usp=sharing
+link do colab: https://colab.research.google.com/drive/110YxqezUhvkwnELDaqlHONvEMqiHHKCx?usp=sharing
+![Arquivo SQL de inserts para o relatório](https://github.com/Renato1478/Template_Trab_BD1_2020/blob/master/arquivos/inserts_relatorio.sql?raw=true "Tabela - AchaPatas")
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
