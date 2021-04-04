@@ -558,6 +558,9 @@ link do colab: https://colab.research.google.com/drive/110YxqezUhvkwnELDaqlHONvE
 #### a) Modelo (pecha kucha)<br>
 #### b) Tempo de apresentação 6:40 
 
+link para o vídeo de apresentação: https://youtu.be/fh2uGnrifqk
+link para o slides: https://docs.google.com/presentation/d/1tvQq5PCBshUTlMtoG1WjSUZ5BlXuIUjM3VapSpzRlWI/edit?usp=sharing
+
 ># Marco de Entrega 03: Itens 10 e 11<br>
 <br>
 <br>
